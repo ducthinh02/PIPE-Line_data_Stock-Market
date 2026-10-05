@@ -1,0 +1,27 @@
+FROM openjdk:11-jdk-slim
+
+# Cài đặt các công cụ cơ bản (wget, bash, v.v.)
+RUN apt-get update && apt-get install -y wget bash procps && rm -rf /var/lib/apt/lists/*
+
+# 1. Tải và giải nén Apache Spark 3.5.1 
+RUN wget https://dlcdn.apache.org/spark/spark-3.5.1/spark-3.5.1-bin-hadoop3.tgz && \
+    tar -xvzf spark-3.5.1-bin-hadoop3.tgz && \
+    mv spark-3.5.1-bin-hadoop3 /usr/local/spark && \
+    rm spark-3.5.1-bin-hadoop3.tgz
+
+# 2. Cấu hình biến môi trường Spark
+ENV SPARK_HOME=/usr/local/spark
+ENV PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
+# 3. Cấu hình spark-env.sh để tích hợp với Hadoop (trỏ tới thư mục conf của Hadoop)
+# (Lưu ý: Thư mục /opt/hadoop/etc/hadoop là đường dẫn chuẩn của image apache/hadoop:3.5.0)
+RUN cp $SPARK_HOME/conf/spark-env.sh.template $SPARK_HOME/conf/spark-env.sh && \
+    echo "export HADOOP_CONF_DIR=/opt/hadoop/etc/hadoop" >> $SPARK_HOME/conf/spark-env.sh && \
+    echo "export SPARK_MASTER_HOST='0.0.0.0'" >> $SPARK_HOME/conf/spark-env.sh && \
+    echo "export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64" >> $SPARK_HOME/conf/spark-env.sh
+
+# 4. Cấu hình log4j 
+RUN cp $SPARK_HOME/conf/log4j.properties.template $SPARK_HOME/conf/log4j.properties
+
+WORKDIR /workspace

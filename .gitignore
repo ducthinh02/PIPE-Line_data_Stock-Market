@@ -1,0 +1,36 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Environment / secrets
+.env
+*.pem
+
+# Logs
+*.log
+
+# Local data
+data/raw/
+data/processed/
+
+# Airflow
+airflow/logs/
+airflow/__pycache__/
+
+# IDE
+.vscode/
+.idea/
+
+# Project raw/processed data
+Master Data/data/raw/
+TransactionData/data/raw/
+
+Master Data/src/extract/test.py
+TransactionData/src/extract/test.py
+TransactionData/src/transform/test.py
+TransactionData/src/transform/test_1.py
+
+# OS
+.DS_Store
+Thumbs.db
