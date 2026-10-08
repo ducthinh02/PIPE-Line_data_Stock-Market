@@ -1,0 +1,3487 @@
+[
+  {
+    "symbol": "BIC",
+    "industry_code": 2,
+    "industry_name": "Bảo hiểm"
+  },
+  {
+    "symbol": "BMI",
+    "industry_code": 2,
+    "industry_name": "Bảo hiểm"
+  },
+  {
+    "symbol": "BVH",
+    "industry_code": 2,
+    "industry_name": "Bảo hiểm"
+  },
+  {
+    "symbol": "MIG",
+    "industry_code": 2,
+    "industry_name": "Bảo hiểm"
+  },
+  {
+    "symbol": "PGI",
+    "industry_code": 2,
+    "industry_name": "Bảo hiểm"
+  },
+  {
+    "symbol": "PRE",
+    "industry_code": 2,
+    "industry_name": "Bảo hiểm"
+  },
+  {
+    "symbol": "PTI",
+    "industry_code": 2,
+    "industry_name": "Bảo hiểm"
+  },
+  {
+    "symbol": "PVI",
+    "industry_code": 2,
+    "industry_name": "Bảo hiểm"
+  },
+  {
+    "symbol": "VNR",
+    "industry_code": 2,
+    "industry_name": "Bảo hiểm"
+  },
+  {
+    "symbol": "ACG",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "AMV",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "BKG",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "BSR",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "CAP",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "CET",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "DHC",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "DLG",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "GTA",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "HAP",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "HHP",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "INN",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "ITQ",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "MCP",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "MZG",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "NHT",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "PLC",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "PMS",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "PTB",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "SBV",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "SHI",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "SMT",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "SSM",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "SVT",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "TLD",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "TLG",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "TMT",
+    "industry_code": 26,
+    "industry_name": "SX Phụ trợ"
+  },
+  {
+    "symbol": "ASP",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "BTP",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "BTW",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "BWE",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "CHP",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "CLW",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "CNG",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "DNC",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "DRL",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "DTK",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "GAS",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "GDW",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "GEG",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "GHC",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "HID",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "HJS",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "HNA",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "IDC",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "KHP",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "NBP",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "NBW",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "NT2",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "NTH",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "PGC",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "PGD",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "PGS",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "PGV",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "PIC",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "POW",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "PPC",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "PVG",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "S4A",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "SBA",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "SEB",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "SHP",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "SIP",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "SJD",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "TBC",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "TDM",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "TDW",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "TMP",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "TTA",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "TTE",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "UIC",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "VPD",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "VSH",
+    "industry_code": 22,
+    "industry_name": "Tiện ích"
+  },
+  {
+    "symbol": "CJC",
+    "industry_code": 15,
+    "industry_name": "SX Thiết bị, máy móc"
+  },
+  {
+    "symbol": "CTB",
+    "industry_code": 15,
+    "industry_name": "SX Thiết bị, máy móc"
+  },
+  {
+    "symbol": "CTT",
+    "industry_code": 15,
+    "industry_name": "SX Thiết bị, máy móc"
+  },
+  {
+    "symbol": "NAG",
+    "industry_code": 15,
+    "industry_name": "SX Thiết bị, máy móc"
+  },
+  {
+    "symbol": "NHH",
+    "industry_code": 15,
+    "industry_name": "SX Thiết bị, máy móc"
+  },
+  {
+    "symbol": "QHD",
+    "industry_code": 15,
+    "industry_name": "SX Thiết bị, máy móc"
+  },
+  {
+    "symbol": "SBG",
+    "industry_code": 15,
+    "industry_name": "SX Thiết bị, máy móc"
+  },
+  {
+    "symbol": "SHE",
+    "industry_code": 15,
+    "industry_name": "SX Thiết bị, máy móc"
+  },
+  {
+    "symbol": "INC",
+    "industry_code": 28,
+    "industry_name": "Dịch vụ tư vấn, hỗ trợ"
+  },
+  {
+    "symbol": "PPE",
+    "industry_code": 28,
+    "industry_name": "Dịch vụ tư vấn, hỗ trợ"
+  },
+  {
+    "symbol": "SDC",
+    "industry_code": 28,
+    "industry_name": "Dịch vụ tư vấn, hỗ trợ"
+  },
+  {
+    "symbol": "TV2",
+    "industry_code": 28,
+    "industry_name": "Dịch vụ tư vấn, hỗ trợ"
+  },
+  {
+    "symbol": "TV3",
+    "industry_code": 28,
+    "industry_name": "Dịch vụ tư vấn, hỗ trợ"
+  },
+  {
+    "symbol": "TV4",
+    "industry_code": 28,
+    "industry_name": "Dịch vụ tư vấn, hỗ trợ"
+  },
+  {
+    "symbol": "VNC",
+    "industry_code": 28,
+    "industry_name": "Dịch vụ tư vấn, hỗ trợ"
+  },
+  {
+    "symbol": "ACB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "BAB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "BID",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "BVB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "CTG",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "EIB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "EVF",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "HDB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "KLB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "LPB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "MBB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "MSB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "NAB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "NVB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "OCB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "SHB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "SSB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "STB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "TCB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "TPB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "VAB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "VBB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "VCB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "VIB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "VPB",
+    "industry_code": 11,
+    "industry_name": "Ngân hàng"
+  },
+  {
+    "symbol": "AFX",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "ANT",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "BAF",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "BCF",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "BHN",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "BNA",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "DBC",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "HAD",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "HAT",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "HHC",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "KDC",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "KTS",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "LAF",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "LSS",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "MCH",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "MCM",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "MSN",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "NAF",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "PAN",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "SAB",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "SAF",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "SBT",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "SGC",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "SLS",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "SMB",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "THB",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "VCF",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "VDL",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "VHE",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "VNM",
+    "industry_code": 19,
+    "industry_name": "Thực phẩm - Đồ uống"
+  },
+  {
+    "symbol": "AAN",
+    "industry_code": 12,
+    "industry_name": "Nông - Lâm - Ngư"
+  },
+  {
+    "symbol": "CTP",
+    "industry_code": 12,
+    "industry_name": "Nông - Lâm - Ngư"
+  },
+  {
+    "symbol": "HAG",
+    "industry_code": 12,
+    "industry_name": "Nông - Lâm - Ngư"
+  },
+  {
+    "symbol": "HKT",
+    "industry_code": 12,
+    "industry_name": "Nông - Lâm - Ngư"
+  },
+  {
+    "symbol": "HPA",
+    "industry_code": 12,
+    "industry_name": "Nông - Lâm - Ngư"
+  },
+  {
+    "symbol": "HSL",
+    "industry_code": 12,
+    "industry_name": "Nông - Lâm - Ngư"
+  },
+  {
+    "symbol": "NSC",
+    "industry_code": 12,
+    "industry_name": "Nông - Lâm - Ngư"
+  },
+  {
+    "symbol": "SSC",
+    "industry_code": 12,
+    "industry_name": "Nông - Lâm - Ngư"
+  },
+  {
+    "symbol": "SVN",
+    "industry_code": 12,
+    "industry_name": "Nông - Lâm - Ngư"
+  },
+  {
+    "symbol": "VIF",
+    "industry_code": 12,
+    "industry_name": "Nông - Lâm - Ngư"
+  },
+  {
+    "symbol": "DBD",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "DBT",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "DCL",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "DHG",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "DHT",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "DMC",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "DP3",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "DTG",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "DVM",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "FIT",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "IMP",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "LDP",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "MED",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "MKV",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "OPC",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "PMC",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "PPP",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "SPM",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "TNH",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "TRA",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "VDP",
+    "industry_code": 8,
+    "industry_name": "Chăm sóc sức khỏe"
+  },
+  {
+    "symbol": "AMC",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "BKC",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "BMC",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "C32",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "CLM",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "CST",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "DHA",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "DHM",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "HGM",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "HLC",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "HMR",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "KSB",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "KSV",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "MDC",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "MDG",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "MIC",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "MVB",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "NBC",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "NNC",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "PVB",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "PVC",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "PVD",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "PVS",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "TD6",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "THT",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "TMB",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "TNT",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "TVD",
+    "industry_code": 10,
+    "industry_name": "Khai khoáng"
+  },
+  {
+    "symbol": "AME",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "C47",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "C69",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "CCC",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "CII",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "CMS",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "CTD",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "CTI",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "CX8",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "DC2",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "DC4",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "DIH",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "DPG",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "FCN",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "HAS",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "HHV",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "HTI",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "HTN",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "HUB",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "HUT",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "HVH",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "L10",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "L18",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "L40",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "LCD",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "LCG",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "LGC",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "LHC",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "LIG",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "LM8",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "MCO",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "MST",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "NDX",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "PC1",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "PEN",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "PHC",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "PPS",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "PTC",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "PTD",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "QTC",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "REE",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "S55",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "S99",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "SC5",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "SCG",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "SCI",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "SD5",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "SD9",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "SJE",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "SRF",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "TA9",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "THD",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "TSA",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "TTL",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "V12",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "VC1",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "VC2",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "VC6",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "VC9",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "VCC",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "VCG",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "VE1",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "VE3",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "VE4",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "VMC",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "VSI",
+    "industry_code": 24,
+    "industry_name": "Xây dựng"
+  },
+  {
+    "symbol": "AAM",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "ABT",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "ACL",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "ANV",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "ASM",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "CAN",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "CMX",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "DAT",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "FMC",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "IDI",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "KHS",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "SJ1",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "TFC",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "VHC",
+    "industry_code": 20,
+    "industry_name": "Chế biến Thủy sản"
+  },
+  {
+    "symbol": "AAT",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "ADS",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "EVE",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "GDT",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "GIL",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "HTG",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "KMR",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "MSH",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "NAV",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "RYG",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "SAV",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "SHA",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "STK",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "SVD",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "TCM",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "TDT",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "TET",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "TNG",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "TTF",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "TVT",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "X20",
+    "industry_code": 16,
+    "industry_name": "SX Hàng gia dụng"
+  },
+  {
+    "symbol": "ABR",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "ADC",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "BED",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "CKV",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "CMG",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "CTR",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "DAD",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "DAE",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "DST",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "EBS",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "ECI",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "EID",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "ELC",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "FPT",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "GLT",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "HEV",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "ICT",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "ITD",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "KST",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "LBE",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "ONE",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "PIA",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "QST",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "SED",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "SGD",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "SGT",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "SMN",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "STC",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "VTC",
+    "industry_code": 6,
+    "industry_name": "Công nghệ và thông tin"
+  },
+  {
+    "symbol": "DAH",
+    "industry_code": 25,
+    "industry_name": "Dịch vụ lưu trú, ăn uống, giải trí"
+  },
+  {
+    "symbol": "DSN",
+    "industry_code": 25,
+    "industry_name": "Dịch vụ lưu trú, ăn uống, giải trí"
+  },
+  {
+    "symbol": "NVT",
+    "industry_code": 25,
+    "industry_name": "Dịch vụ lưu trú, ăn uống, giải trí"
+  },
+  {
+    "symbol": "OCH",
+    "industry_code": 25,
+    "industry_name": "Dịch vụ lưu trú, ăn uống, giải trí"
+  },
+  {
+    "symbol": "SGH",
+    "industry_code": 25,
+    "industry_name": "Dịch vụ lưu trú, ăn uống, giải trí"
+  },
+  {
+    "symbol": "TTT",
+    "industry_code": 25,
+    "industry_name": "Dịch vụ lưu trú, ăn uống, giải trí"
+  },
+  {
+    "symbol": "VNG",
+    "industry_code": 25,
+    "industry_name": "Dịch vụ lưu trú, ăn uống, giải trí"
+  },
+  {
+    "symbol": "VPL",
+    "industry_code": 25,
+    "industry_name": "Dịch vụ lưu trú, ăn uống, giải trí"
+  },
+  {
+    "symbol": "AGG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "API",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "BAX",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "BCE",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "BCM",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "CCL",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "CDC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "CEO",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "CIG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "CKG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "CRE",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "CRV",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "CSC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "D11",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "D2D",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "DIG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "DRH",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "DTA",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "DTD",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "DXG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "DXS",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "EVG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "FDC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "FIR",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "HAR",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "HDC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "HDG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "HLD",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "HPX",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "HQC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "HU1",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "ICG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "IDJ",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "IDV",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "IJC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "ITC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "KBC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "KDH",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "KHG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "KOS",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "KSF",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "L14",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "LDG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "LGL",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "LHG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "NBB",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "NDN",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "NHA",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "NLG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "NRC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "NTC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "NTL",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "NVL",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "PDR",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "PTL",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "PV2",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "QCG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "RCL",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "SCR",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "SDU",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "SGR",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "SJS",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "SZB",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "SZC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "SZL",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "TAL",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "TCH",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "TDC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "TDH",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "TIG",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "TIP",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "TIX",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "TN1",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "V21",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "VC3",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "VC7",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "VHM",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "VIC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "VPH",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "VPI",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "VRC",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "VRE",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "VTJ",
+    "industry_code": 3,
+    "industry_name": "Bất động sản"
+  },
+  {
+    "symbol": "AAA",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "ABS",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "ADP",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "ALT",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "APH",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "BBS",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "BFC",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "BMP",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "BPC",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "BXH",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "CPC",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "CSV",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "DCM",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "DGC",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "DNP",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "DPM",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "DPR",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "DTT",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "GVR",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "HCD",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "HDA",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "HII",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "HRC",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "HVT",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "LAS",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "LIX",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "NET",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "NFC",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "NTP",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "PBP",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "PCE",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "PCH",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "PGN",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "PHR",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "PLP",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "PMB",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "PMP",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "PSW",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "SDG",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "SDN",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "SFG",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "SFN",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "SPC",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "STP",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "TDP",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "TNC",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "TPC",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "TPP",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "TRC",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "VBC",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "VPS",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "VTZ",
+    "industry_code": 18,
+    "industry_name": "SX Nhựa - Hóa chất"
+  },
+  {
+    "symbol": "IPA",
+    "industry_code": 29,
+    "industry_name": "Tài chính khác"
+  },
+  {
+    "symbol": "OGC",
+    "industry_code": 29,
+    "industry_name": "Tài chính khác"
+  },
+  {
+    "symbol": "TVC",
+    "industry_code": 29,
+    "industry_name": "Tài chính khác"
+  },
+  {
+    "symbol": "ARM",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "ASG",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "AST",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "CAG",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "CCR",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "CDN",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "CIA",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "CLL",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "DL1",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "DS3",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "DVP",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "DXP",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "GIC",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "GMD",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "GSP",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "HAH",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "HCT",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "HMH",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "HTV",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "HVN",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "ILB",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "MAC",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "MAS",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "MHC",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "NAP",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "NCT",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "PDN",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "PDV",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "PGT",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "PJC",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "PJT",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "PRC",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "PTS",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "PVP",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "PVT",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "QNP",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "SCS",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "SFI",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "SGN",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "SKG",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "STG",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "TCL",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "TCO",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "TCT",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "TJC",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "TMS",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "TOT",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VGP",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VIP",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VJC",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VMS",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VNF",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VNL",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VNS",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VNT",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VOS",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VSA",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VSC",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VSM",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VTO",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "VTP",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "WCS",
+    "industry_code": 23,
+    "industry_name": "Vận tải - kho bãi"
+  },
+  {
+    "symbol": "AGR",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "APG",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "APS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "BSI",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "BVS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "CTS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "DSC",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "DSE",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "EVS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "FTS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "HBS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "HCM",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "IVS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "LPS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "MBS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "ORS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "PSI",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "SHS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "SSI",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "TCI",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "TCX",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "TVB",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "TVS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "VCI",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "VCK",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "VDS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "VFS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "VIG",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "VIX",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "VND",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "VPX",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "WSS",
+    "industry_code": 5,
+    "industry_name": "Chứng khoán"
+  },
+  {
+    "symbol": "CMC",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "DGW",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "FID",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "GEL",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "HHS",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "HMC",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "HTL",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "JVC",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "KDM",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "KMT",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "MCF",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "MEL",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "NO1",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "PCT",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "PET",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "PIT",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "PLX",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "PMG",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "PPT",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "PPY",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "PSC",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "PSD",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "PSE",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "PTX",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "SHN",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "SMA",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "SMC",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "SRA",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "ST8",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "TDG",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "THS",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "TLH",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "TNI",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "TSC",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "TTH",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "UNI",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "VCM",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "VFG",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "VID",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "VMD",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "VPG",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "VTV",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "VVS",
+    "industry_code": 1,
+    "industry_name": "Bán buôn"
+  },
+  {
+    "symbol": "BRC",
+    "industry_code": 17,
+    "industry_name": "Sản phẩm cao su"
+  },
+  {
+    "symbol": "CSM",
+    "industry_code": 17,
+    "industry_name": "Sản phẩm cao su"
+  },
+  {
+    "symbol": "DRC",
+    "industry_code": 17,
+    "industry_name": "Sản phẩm cao su"
+  },
+  {
+    "symbol": "SRC",
+    "industry_code": 17,
+    "industry_name": "Sản phẩm cao su"
+  },
+  {
+    "symbol": "ACC",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "BCC",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "BTS",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "CLH",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "CRC",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "CVT",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "DTL",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "DXV",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "FCM",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "GKM",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "GMH",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "GMX",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "HCC",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "HOM",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "HPG",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "HSG",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "HT1",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "KKC",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "LBM",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "MCC",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "NHC",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "NKG",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "NSH",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "PDB",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "TCR",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "TEG",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "THG",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "TKU",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "TMX",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "TTC",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "TXM",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "VCA",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "VCS",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "VGC",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "VGS",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "VHL",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "VIT",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "YBM",
+    "industry_code": 21,
+    "industry_name": "Vật liệu xây dựng"
+  },
+  {
+    "symbol": "BTT",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "CCI",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "CMV",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "COM",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "CTF",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "DMX",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "FRT",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "GMA",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "HAX",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "HTC",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "MWG",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "PNC",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "PNJ",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "SFC",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "SVC",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "TMC",
+    "industry_code": 7,
+    "industry_name": "Bán lẻ"
+  },
+  {
+    "symbol": "DHP",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "DQC",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "GEE",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "GEX",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "KSD",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "MBG",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "PAC",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "PHN",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "POT",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "RAL",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "SAM",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "TSB",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "TYA",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "VTB",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  },
+  {
+    "symbol": "VTH",
+    "industry_code": 27,
+    "industry_name": "Thiết bị điện"
+  }
+]

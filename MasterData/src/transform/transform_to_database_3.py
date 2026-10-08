@@ -40,10 +40,10 @@ def save_to_json(dataframe, filename):
     dataframe.to_json(filename,orient="records",lines=True)
 
 def transform_to_database_3():
-    company_raw  = read_latest_file_in_directory('D:/ETL-pipeline data analytics securities/Master Data/data/raw/company')
+    company_raw  = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/company')
     date = datetime.date.today().strftime("%Y_%m_%d")
     
-    industries_for_symbol = read_latest_file_in_directory('D:/ETL-pipeline data analytics securities/Master Data/data/raw/industries')
+    industries_for_symbol = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/industries')
     
     industries_for_symbol = clean_dataframe(
         pd.DataFrame([
@@ -119,7 +119,7 @@ def transform_to_database_3():
         "outstanding_shares","ceo_name"]
     ]
                 
-    company_path = (f"D:/ETL-pipeline data analytics securities/Master Data/data/processed/transformed_to_database_company/"
+    company_path = (f"/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/processed/transformed_to_database_company/"
                 f"process_company_{date}.json")
         
     save_to_json(company_join_to_exchange_industries,company_path)

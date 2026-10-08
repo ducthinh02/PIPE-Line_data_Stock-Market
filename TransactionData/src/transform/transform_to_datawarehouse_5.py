@@ -110,13 +110,6 @@ def generate_company_aliases(company_name):
 
     aliases.add(alias)
 
-    # --------------------------------------------------------
-    # Bỏ "Tập đoàn"
-    #
-    # Tập đoàn Hòa Phát
-    # -> Hòa Phát
-    # --------------------------------------------------------
-
     alias = re.sub(
         r"^Tập đoàn\s+",
         "",
@@ -591,8 +584,8 @@ def process_fact_company_news (parquet_file_path):
     spark.stop()
     
 def transform_to_datawarehouse_5():
-    hdfs = ''
+    news_hdfs_path = '/user/ubuntu/datalake/news'
     
-    latest_file = get_late_parquet_file(hdfs_directory=hdfs)
+    latest_file = get_late_parquet_file(hdfs_directory=news_hdfs_path)
     
     process_fact_company_news(latest_file)

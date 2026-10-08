@@ -35,17 +35,17 @@ def load_db_to_parquet():
     
     conn = create_engine(f"postgresql://{user}:{password}@{host}:{post}/{database}")
     
-    file_path = 'D:/ETL-pipeline data analytics securities/TransactionData/src/extract/extract_db_to_parquet.sql'
+    file_path = '/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/src/extract/extract_db_to_parquet.sql'
     
     date = datetime.date.today().strftime("%Y_%m_%d")
     query = read_query_from_file(file_path=file_path)
     
-    company_output = 'TransactionData/data/completed/load_db_to_parquet/load_companny_to_parquet_'+f"{date}.parquet"
+    company_output = '/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_db_companny_to_parquet/load_companny_to_parquet_'+f"{date}.parquet"
     
     query_to_parquet(query=query[0],conn=conn, 
                         path_query_file=company_output)
     
-    index_output = 'TransactionData/data/completed/load_db_to_parquet/load_index_to_parquet_'+f"{date}.parquet"
+    index_output = '/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_db_index_to_parquet/load_index_to_parquet_'+f"{date}.parquet"
     
     query_to_parquet(query=query[1],conn=conn, 
                     path_query_file=index_output)

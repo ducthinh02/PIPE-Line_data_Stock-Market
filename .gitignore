@@ -31,6 +31,10 @@ TransactionData/src/extract/test.py
 TransactionData/src/transform/test.py
 TransactionData/src/transform/test_1.py
 
+#requirements
+requirements_2.txt
+requirements.txt
+
 # OS
 .DS_Store
 Thumbs.db

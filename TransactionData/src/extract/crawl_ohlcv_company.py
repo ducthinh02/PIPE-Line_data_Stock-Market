@@ -9,7 +9,7 @@ from tenacity import RetryError
 ref = Reference()
 mkt = Market()
 
-path = Path("D:/ETL-pipeline data analytics securities/TransactionData/data/raw/ohlcv")
+path = "/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/ohlcv_company"
 
 def crawl_ohlcv_company():
     
@@ -36,9 +36,7 @@ def crawl_ohlcv_company():
 
     date_json = (date.today() - timedelta(days=1)).strftime("%Y-%m-%d")
 
-    path.mkdir(parents=True,exist_ok=True)
-
-    path_raw = path/ f"crawl_ohlcv_{date_json}.json"
+    path_raw = f"{path}/crawl_ohlcv_{date_json}.json"
 
     with open(path_raw,"w", encoding="utf-8") as outfile:
         json.dump(dict_equity,
@@ -47,5 +45,5 @@ def crawl_ohlcv_company():
                     indent=2,
                     default= str)
     
-crawl_ohlcv_company()
+# crawl_ohlcv_company()
     

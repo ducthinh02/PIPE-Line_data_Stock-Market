@@ -134,40 +134,40 @@ def load_db_ohlcv_to_dl(input_directory, output_directory):
 def load_api_to_parquet():
     
     # chuyển json sang dataframe sang parquet
-    input_directory = r'ETL-pipeline data analytics securities/TransactionData/data/raw/ohlcv'
+    input_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/ohlcv_company'
     # Path to the directory to save the Parquet files
-    output_directory = r'ETL-pipeline data analytics securities/TransactionData/data/completed/load_api_ohlcv_to_dl'
+    output_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_ohlcv_company_to_dl'
     
     
     load_db_ohlcv_to_dl(input_directory, output_directory)
 
     # Convert News JSON files to Parquet
     # Path to the directory containing the JSON files
-    input_directory = r'ETL-pipeline data analytics securities/TransactionData/data/raw/news'
+    input_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/news'
     # Path to the directory to save the Parquet files
-    output_directory = r'ETL-pipeline data analytics securities/TransactionData/data/completed/load_api_news_to_dl'
+    output_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_news_to_dl'
     load_db_to_dl(input_directory, output_directory)
 
 
     # Convert Retail JSON files to Parquet
     # Path to the directory containing the JSON files
-    input_directory = r'ETL-pipeline data analytics securities/TransactionData/data/raw/retail'
+    input_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/ohlcv_retail'
     # Path to the directory to save the Parquet files
-    output_directory = r'ETL-pipeline data analytics securities/TransactionData/data/completed/load_api_retail_to_dl'
+    output_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_retail_to_dl'
     load_db_to_dl(input_directory, output_directory)
     
     
     # Convert Rate JSON files to Parquet
     # Path to the directory containing the JSON files
-    input_directory = r'ETL-pipeline data analytics securities/TransactionData/data/raw/retail/rate'
+    input_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/ohlcv_rate'
     # Path to the directory to save the Parquet files
-    output_directory = r'ETL-pipeline data analytics securities/TransactionData/data/completed/load_api_rate_to_dl'
+    output_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_rate_to_dl'
     load_db_to_dl(input_directory, output_directory)
     
 
     # chuyển json index ohlcv sang parquet
-    input_directory = r'ETL-pipeline data analytics securities/TransactionData/data/raw/index_ohlcv'
+    input_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/index_ohlcv'
     # Path to the directory to save the Parquet files
-    output_directory = r'ETL-pipeline data analytics securities/TransactionData/data/completed/load_api_index_ohlcv_to_dl'
+    output_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_index_ohlcv_to_dl'
     load_db_ohlcv_to_dl(input_directory, output_directory)
 load_api_to_parquet()

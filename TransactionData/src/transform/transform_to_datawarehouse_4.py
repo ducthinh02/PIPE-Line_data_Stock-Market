@@ -370,8 +370,8 @@ def process_news_dim_news (parquet_file_path):
     
 def transform_to_datawarehouse_4():
     
-    hdfs_path = ''
+    news_hdfs_path = '/user/ubuntu/datalake/news'
     
-    latest_file = get_late_parquet_file(hdfs_directory=hdfs_path)
+    latest_file = get_late_parquet_file(hdfs_directory=news_hdfs_path)
     
     process_news_dim_news(latest_file)

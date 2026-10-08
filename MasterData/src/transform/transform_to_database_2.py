@@ -41,7 +41,7 @@ def save_to_json(dataframe, filename):
 
 def transform_to_database_2():
     
-    index_raw  = read_latest_file_in_directory('D:/ETL-pipeline data analytics securities/Master Data/data/raw/index')
+    index_raw  = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/index')
     date = datetime.date.today().strftime("%Y_%m_%d")
     
     index = clean_dataframe(
@@ -85,7 +85,7 @@ def transform_to_database_2():
     
     index.rename(columns=new_columns,inplace=True)
     
-    index_path = (f"D:/ETL-pipeline data analytics securities/Master Data/data/processed/transformed_to_database_index/"
+    index_path = (f"/home/ubuntu/PIPE-Line_data_Stock-Market/Master Data/data/processed/transformed_to_database_index/"
                     f"process_index_{date}.json")
     
     save_to_json(index,index_path)

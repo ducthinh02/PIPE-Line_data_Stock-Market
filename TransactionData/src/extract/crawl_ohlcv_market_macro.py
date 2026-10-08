@@ -11,19 +11,9 @@ ret = Retail()
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-RAW_FILE = (PROJECT_ROOT
-            /"data"
-            /"raw"
-            /"retail"
-            )
+path = "/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/ohlcv_retail"
 
-RAW_FILE_RATE = (PROJECT_ROOT
-            /"data"
-            /"raw"
-            /"retail"
-            /"rate"
-            )
-
+path_rate = "/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/ohlcv_rate"
 
 def crawl_ohlcv_market_macro() -> dict:
 
@@ -94,10 +84,8 @@ def crawl_ohlcv_market_macro() -> dict:
         
     date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     
-    raw_file = RAW_FILE/ f"crawl_market_macro_{date}.json"
+    raw_file = f"{path}/crawl_market_macro_{date}.json"
     
-    raw_file.parent.mkdir(parents=True, exist_ok= True)
-
     
     with open(
         raw_file,
@@ -111,10 +99,8 @@ def crawl_ohlcv_market_macro() -> dict:
             indent=2,
             default=str
         )
-    raw_file = RAW_FILE_RATE/ f"crawl_market_macro_rate_{date}.json"
+    raw_file =f"{path_rate}/crawl_market_macro_rate_{date}.json"
         
-    raw_file.parent.mkdir(parents=True, exist_ok= True)
-
     with open(
             raw_file,
             "w",

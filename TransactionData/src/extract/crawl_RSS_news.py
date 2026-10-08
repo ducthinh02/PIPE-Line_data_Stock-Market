@@ -15,20 +15,9 @@ BASE_URL = os.getenv(
     "https://newsdata.io/api/1"
 )
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
+path = "/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/news"
 
-RAW_FILE = (
-    PROJECT_ROOT
-    / "data"
-    / "raw"
-    / "news"
-)
-PROCESSED_FILE = (PROJECT_ROOT/
-                "data"
-                /"raw"
-                /"news"
-                /"processed"
-                )
+path_process = "/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/news/process"
 
 def query_news():
     url = f"{BASE_URL}/latest"
@@ -76,10 +65,7 @@ def query_news():
 def save_raw_news(data):
     date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     
-    raw_file = RAW_FILE/ f"newsdata_{date}.json"
-    
-    raw_file.parent.mkdir(parents=True, exist_ok= True)
-
+    raw_file = f"{path}/newsdata_{date}.json"
     
     with open(
         raw_file,
@@ -130,7 +116,7 @@ def crawl_article(url):
 def process_raw_news():
     date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-    raw_file = RAW_FILE / f"newsdata_{date}.json"
+    raw_file = f"{path}/newsdata_{date}.json"
     with open(raw_file, "r", encoding="utf-8") as f:
         raw_data = json.load(f)
 
@@ -192,8 +178,7 @@ def save_processed_news(data):
     
     date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
-    process_file = PROCESSED_FILE / f"newsdata_processed_{date}.json"
-    process_file.parent.mkdir(parents=True, exist_ok=True)
+    process_file = f"{path_process}/newsdata_processed_{date}.json"
 
     with open(process_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)

@@ -8,14 +8,7 @@ from pathlib import Path
 
 ref = Reference()
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-
-RAW_FILE = (PROJECT_ROOT
-            /"data"
-            /"raw"
-            /"index"
-            )
-
+path = "/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/index"
 
 def crawl_index() -> dict:
 
@@ -51,11 +44,7 @@ def crawl_index() -> dict:
     
     date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     
-    raw_file = RAW_FILE/ f"crawl_index_{date}.json"
-    
-    raw_file.parent.mkdir(parents=True, exist_ok= True)
-    
-    
+    raw_file = f"{path}/crawl_index_{date}.json"    
     
     data_json = {
         "total": len(data),
@@ -75,4 +64,4 @@ def crawl_index() -> dict:
             indent=2,
         )
     
-crawl_index()
+# crawl_index()

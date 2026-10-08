@@ -8,14 +8,9 @@ from pathlib import Path
 
 ref = Reference()
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
+path = "/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/company"
 
-RAW_FILE = (PROJECT_ROOT
-            /"data"
-            /"raw"
-            /"company"
-            )
-
+# path ="D:/ETL-pipeline data analytics securities/MasterData/data/raw/company"
 
 def extract_companies() -> dict:
 
@@ -93,9 +88,9 @@ def extract_companies() -> dict:
 def save_raw_news(data):
     date = datetime.now(timezone.utc).strftime("%Y-%m-%d")
     
-    raw_file = RAW_FILE/ f"crawl_companies_{date}.json"
+    raw_file =  f"{path}/crawl_companies_{date}.json"
     
-    raw_file.parent.mkdir(parents=True, exist_ok= True)
+    # raw_file.parent.mkdir(parents=True, exist_ok= True)
 
     
     with open(

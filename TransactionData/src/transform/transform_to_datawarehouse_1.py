@@ -48,7 +48,7 @@ def process_company(parquet_file_path):
     arrow_table = pa.Table.from_pandas(pandas_dataframe)
     
     # đường dẫn datawarehouse.duckdb
-    database_path = 'D:/ETL-pipeline data analytics securities/datawarehouse.duckdb'
+    database_path = '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb'
     
     conn = duckdb.connect(database=database_path)
     
@@ -116,7 +116,7 @@ def process_index(parquet_file_path):
     arrow_table = pa.Table.from_pandas(pandas_dataframe)
     
     # đường dẫn datawarehouse.duckdb
-    database_path = 'D:/ETL-pipeline data analytics securities/datawarehouse.duckdb'
+    database_path = '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb'
     
     conn = duckdb.connect(database=database_path)
     
@@ -146,11 +146,11 @@ def process_index(parquet_file_path):
 def transform_to_datawarehouse_1():
 
     company_file = get_latest_parquet_file(
-        "/user/anhcu/datalake/companies/"
+        "/user/ubuntu/datalake/companies"
     )
 
     index_file = get_latest_parquet_file(
-        "/user/anhcu/datalake/indexes/"
+        "/user/ubuntu/datalake/index"
     )
 
     process_company(company_file)

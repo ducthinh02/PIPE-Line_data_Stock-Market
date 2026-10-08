@@ -116,7 +116,7 @@ def process(parquet_file_path):
     ).fetchdf()
     
     
-    if "index" in parquet_file_path:
+    if "ohlcv_index" in parquet_file_path:
         
         df_index_id = conn.execute(
             '''
@@ -180,7 +180,7 @@ def process(parquet_file_path):
             '''
             
         )
-    elif "ohlcv" in parquet_file_path:
+    elif "ohlcv_companies" in parquet_file_path:
         
         # Rename columns for clarity
         df_spark_ohlcv = df_spark_ohlcv.withColumnRenamed("ticker", "company_ticket") \
@@ -259,11 +259,11 @@ def process(parquet_file_path):
 def transform_to_datawarehouse_2():
     # tạo fact_candles:
     
-    company_ohlcv_file_path = 'ETL-pipeline data analytics securities/TransactionData/data/completed/load_api_ohlcv_to_dl'
+    company_ohlcv_file_path = '/user/ubuntu/datalake/ohlcv/ohlcv_companies'
     company_parquet_file_path = get_latest_parquet_file(company_ohlcv_file_path)
     process(company_parquet_file_path)
     
     # tạo fact_index_candles
-    index_ohlcv_file_path = 'ETL-pipeline data analytics securities/TransactionData/data/completed/load_api_index_ohlcv_to_dl'
-    parquet_file_path = get_latest_parquet_file(index_ohlcv_file_path)
-    process(parquet_file_path=parquet_file_path)
+    index_ohlcv_file_path = '/user/ubuntu/datalake/ohlcv/ohlcv_index'
+    index_parquet_file_path = get_latest_parquet_file(index_ohlcv_file_path)
+    process(parquet_file_path=index_parquet_file_path)

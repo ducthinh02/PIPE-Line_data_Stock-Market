@@ -55,20 +55,22 @@ def save_to_json(dataframe, filename):
     
 def transform_to_database_1():
     
-    market = read_latest_file_in_directory('D:/ETL-pipeline data analytics securities/Master Data/data/raw/company')
-    industries = read_latest_file_in_directory('D:/ETL-pipeline data analytics securities/Master Data/data/raw/industries')
-    market_group = read_latest_file_in_directory('D:/ETL-pipeline data analytics securities/Master Data/data/raw/index')
+    market = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/company')
+    industries = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/industries')
+    market_group = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/index')
 
     date = datetime.date.today().strftime("%Y_%m_%d")
     
     icb_industries = clean_dataframe(pd.DataFrame([
         {
-            "icb_code": item["industry_code"],
-            "industry_name": item["industry_name"]
+            "icb_code": item["icb_code"],
+            "industry_name": item["icb_name"]
         }
         for item in industries
-    ]))
-    industries_path=(f"D:/ETL-pipeline data analytics securities/Master Data/data/processed/transformed_to_database_industries/"
+        if item.get("icb_level") == 1
+    ]).drop_duplicates())
+    
+    industries_path=(f"/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/processed/transformed_to_database_industries/"
                     f"process_industries_{date}.json")
     save_to_json(icb_industries,industries_path)
     
@@ -78,7 +80,7 @@ def transform_to_database_1():
             }
             for item in market
         ]))
-    exchanges_path=(f"D:/ETL-pipeline data analytics securities/Master Data/data/processed/transformed_to_database_exchanges/"
+    exchanges_path=(f"/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/processed/transformed_to_database_exchanges/"
                     f"process_exchanges_{date}.json")
     save_to_json(exchanges,exchanges_path)
     
@@ -89,7 +91,7 @@ def transform_to_database_1():
             for item in market_group
     ]))
     
-    groups_path = (f"D:/ETL-pipeline data analytics securities/Master Data/data/processed/transformed_to_database_index_group/"
+    groups_path = (f"/home/ubuntu/PIPE-Line_data_Stock-Market/Master Data/data/processed/transformed_to_database_index_group/"
                     f"process_index_groups_{date}.json")
     
     save_to_json(index_groups,groups_path)
