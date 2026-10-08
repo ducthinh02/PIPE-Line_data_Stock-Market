@@ -1,8 +1,7 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
-from airflow.utils.dates import days_ago
-from datetime import timedelta
+from datetime import timedelta,datetime
 import sys
 import subprocess
 import os
@@ -39,7 +38,7 @@ with DAG(
     default_args=default_args,
     description='ETL DAG for Data Warehouse',
     schedule='1 1 * * 1-6',  # Chạy khi được kích hoạt bởi DAG khác
-    start_date=days_ago(1),
+    start_date=datetime(2026,10,9),
     catchup=False,
 ) as dag:
     crawl_news_task = PythonOperator(

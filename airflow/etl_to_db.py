@@ -1,8 +1,8 @@
 from airflow import DAG
 from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.operators.python import PythonOperator
-from airflow.utils.dates import days_ago
-from datetime import timedelta
+
+from datetime import timedelta,datetime
 import sys
 
 # Import các hàm từ các tập lệnh của bạn
@@ -38,7 +38,7 @@ with DAG(
     default_args=default_args,
     description='ETL DAG',
     schedule='1 0 * * 0',
-    start_date=days_ago(1),
+    start_date=datetime(2026,10,9),
     catchup=False,
 ) as dag:
 
