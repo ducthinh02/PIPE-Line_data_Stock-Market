@@ -85,7 +85,7 @@ def transform_to_database_2():
     
     index.rename(columns=new_columns,inplace=True)
     
-    index_path = (f"/home/ubuntu/PIPE-Line_data_Stock-Market/Master Data/data/processed/transformed_to_database_index/"
+    index_path = (f"/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/processed/transformed_to_database_index/"
                     f"process_index_{date}.json")
     
     save_to_json(index,index_path)

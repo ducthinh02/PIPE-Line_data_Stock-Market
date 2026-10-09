@@ -65,7 +65,7 @@ def load_json_to_db_3():
     # Insert data into 'company' table
     insert_data_from_json(
         get_latest_file_in_directory(
-            '/home/ubuntu/PIPE-Line_data_Stock-Market/Master Data/data/processed/transformed_to_database_company/', 
+            '/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/processed/transformed_to_database_company/', 
             '.json'
         ),
         'COMPANIES',

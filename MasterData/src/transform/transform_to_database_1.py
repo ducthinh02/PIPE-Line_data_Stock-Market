@@ -109,9 +109,9 @@ def transform_to_database_1():
             for item in market_group
     ]))
     
-    groups_path = (f"/home/ubuntu/PIPE-Line_data_Stock-Market/Master Data/data/processed/transformed_to_database_index_group/"
+    groups_path = (f"/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/processed/transformed_to_database_index_group/"
                     f"process_index_groups_{date}.json")
     
     save_to_json(index_groups,groups_path)
     
-transform_to_database_1()
+# transform_to_database_1()
