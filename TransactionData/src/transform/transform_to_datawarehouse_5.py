@@ -34,17 +34,6 @@ def get_late_parquet_file(hdfs_directory):
 # NER MODEL
 # ============================================================
 
-ner = pipeline(
-    "token-classification",
-    model="dathuynh1108/vi-ner-videberta",
-    aggregation_strategy="simple"
-)
-
-classifier = pipeline(
-    "text-classification",
-    model="FiinGroup/phobert-finetuned",
-    tokenizer="FiinGroup/phobert-finetuned"
-)
 
 LABEL_MAP = {
     "LABEL_0": "negative",
@@ -132,7 +121,7 @@ def generate_company_aliases(company_name):
 
 
 
-def analyze_company_sentiment(context):
+def analyze_company_sentiment(context, classifier):
 
     if not context:
         return None
@@ -222,7 +211,7 @@ def get_company_context(text, aliases, window=1):
 # ============================================================
 
 
-def process_fact_company_news (parquet_file_path):
+def process_fact_company_news (parquet_file_path, ner, classifier):
 
     # --------------------------------------------------------
     # Read JSON
@@ -327,7 +316,7 @@ def process_fact_company_news (parquet_file_path):
         )
     )
     
-    duckdb_path = "D:/ETL-pipeline data analytics securities/datawarehouse.duckdb"
+    duckdb_path = "/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb"
     conn = duckdb.connect(duckdb_path)
 
     id_company_pd = conn.execute(
@@ -445,11 +434,11 @@ def process_fact_company_news (parquet_file_path):
         # PhoBERT
         # ----------------------------------------------------
 
-        sentiment_result = (
-            analyze_company_sentiment(
-                context
+        sentiment_result = analyze_company_sentiment(
+                context,
+                classifier
             )
-        )
+        
 
         if sentiment_result is None:
 
@@ -584,8 +573,20 @@ def process_fact_company_news (parquet_file_path):
     spark.stop()
     
 def transform_to_datawarehouse_5():
+    
+    ner = pipeline(
+    "token-classification",
+    model="dathuynh1108/vi-ner-videberta",
+    aggregation_strategy="simple"
+    )
+
+    classifier = pipeline(
+        "text-classification",
+        model="FiinGroup/phobert-finetuned",
+        tokenizer="FiinGroup/phobert-finetuned"
+    )
     news_hdfs_path = '/user/ubuntu/datalake/news'
     
     latest_file = get_late_parquet_file(hdfs_directory=news_hdfs_path)
     
-    process_fact_company_news(latest_file)
+    process_fact_company_news(latest_file, ner, classifier)

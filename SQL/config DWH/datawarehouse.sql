@@ -76,8 +76,8 @@ CREATE TABLE IF NOT EXISTS dim_news (
     news_source_name VARCHAR NOT NULL,
     news_category VARCHAR,
     news_datatype VARCHAR,
-    new_overall_sentiment_label VARCHAR,
-    new_overall_sentiment_score DOUBLE NOT NULL, 
+    news_overall_sentiment_label VARCHAR,
+    news_overall_sentiment_score DOUBLE NOT NULL, 
     time_stamp TIMESTAMP
 
     FOREIGN KEY (news_time_id)

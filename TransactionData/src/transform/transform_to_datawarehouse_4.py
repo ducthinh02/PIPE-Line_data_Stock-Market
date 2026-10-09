@@ -25,11 +25,7 @@ def get_late_parquet_file(hdfs_directory):
     
     return latest_file
 
-classifier = pipeline(
-    "text-classification",
-    model="FiinGroup/phobert-finetuned",
-    tokenizer="FiinGroup/phobert-finetuned"
-)
+
 
 
 LABEL_MAP = {
@@ -43,7 +39,7 @@ LABEL_MAP = {
 # CHUNK TEXT
 # ============================================================
 
-def split_text_into_chunks(text, chunk_size=240):
+def split_text_into_chunks(text, classifier, chunk_size=240):
 
     tokenizer = classifier.tokenizer
 
@@ -73,9 +69,9 @@ def split_text_into_chunks(text, chunk_size=240):
 # SENTIMENT ONE ARTICLE
 # ============================================================
 
-def analyze_article_sentiment(text):
+def analyze_article_sentiment(text, classifier):
 
-    chunks = split_text_into_chunks(text)
+    chunks = split_text_into_chunks(text, classifier)
 
     if not chunks:
         return None
@@ -170,7 +166,7 @@ def analyze_article_sentiment(text):
         "chunk_count": len(chunks)
     }
 
-def process_news_dim_news (parquet_file_path):
+def process_news_dim_news (parquet_file_path, classifier):
     
     spark = SparkSession.builder\
         .appName("Insert parquet into (dim_news, fact_news_company)")\
@@ -228,7 +224,7 @@ def process_news_dim_news (parquet_file_path):
             
         # phân tích sentiment
         
-        sentiment_result = analyze_article_sentiment(full_content)
+        sentiment_result = analyze_article_sentiment(full_content, classifier)
         
         if sentiment_result is None:
             print(
@@ -261,7 +257,7 @@ def process_news_dim_news (parquet_file_path):
     )
     
     # Connect to DuckDB
-    database_path = 'D:/ETL-pipeline data analytics securities/datawarehouse.duckdb'
+    database_path = '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb'
     conn = duckdb.connect(database=database_path)
     
     # Tạo dim_time
@@ -340,7 +336,7 @@ def process_news_dim_news (parquet_file_path):
                     news_source_name,
                     news_category ,
                     news_datatype ,
-                    news_overall_sentiment_score,
+                    news_overall_sentiment_label,
                     news_overall_sentiment_score,
                     time_stamp
             )
@@ -352,7 +348,7 @@ def process_news_dim_news (parquet_file_path):
                 source_name,
                 category,
                 datatype,
-                news_overall_sentiment_score,
+                news_overall_sentiment_label,
                 news_overall_sentiment_score,
                 time_stamp
                 
@@ -369,9 +365,14 @@ def process_news_dim_news (parquet_file_path):
     spark.stop()
     
 def transform_to_datawarehouse_4():
+    classifier = pipeline(
+        "text-classification",
+        model="FiinGroup/phobert-finetuned",
+        tokenizer="FiinGroup/phobert-finetuned"
+    )
     
     news_hdfs_path = '/user/ubuntu/datalake/news'
     
     latest_file = get_late_parquet_file(hdfs_directory=news_hdfs_path)
     
-    process_news_dim_news(latest_file)
+    process_news_dim_news(latest_file, classifier)

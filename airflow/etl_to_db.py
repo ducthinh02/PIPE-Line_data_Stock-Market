@@ -20,9 +20,9 @@ from transform_to_database_1 import transform_to_database_1
 from transform_to_database_2 import transform_to_database_2
 from transform_to_database_3 import transform_to_database_3
 
-from load_json_to_db_1 import load_json_to_db_1
-from load_json_to_db_2 import load_json_to_db_2
-from load_json_to_db_3 import load_json_to_db_3
+from load_to_database_1 import load_json_to_db_1
+from load_to_database_2 import load_json_to_db_2
+from load_to_database_3 import load_json_to_db_3
 
 # Định nghĩa các tham số mặc định của DAG
 default_args = {
