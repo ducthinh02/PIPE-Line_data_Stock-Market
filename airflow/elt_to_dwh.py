@@ -111,8 +111,16 @@ with DAG(
         crawl_ohlcv_companies_task,
         crawl_ohlcv_market_macro_task,
         crawl_ohlcv_index_task 
-    ] >> [load_api_to_parquet_task, load_db_to_parquet_task
-    ] >> load_parquet_to_hdfs_task >> process_companies_vs_index_task \
+    ] >> load_api_to_parquet_task
+    
+    [   crawl_news_task,
+        crawl_ohlcv_companies_task,
+        crawl_ohlcv_market_macro_task,
+        crawl_ohlcv_index_task 
+        ] >> load_db_to_parquet_task
+    
+    [load_api_to_parquet_task, load_db_to_parquet_task] >> load_parquet_to_hdfs_task\
+        >> process_companies_vs_index_task \
         >> process_ohlcv_company_vs_index_task >> process_ohlcv_retail_vs_rate_task\
         >> process_dim_news_task >> process_fact_news_task_task
     
