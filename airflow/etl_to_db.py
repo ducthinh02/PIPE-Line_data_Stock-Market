@@ -2,13 +2,16 @@ from airflow import DAG
 from airflow.operators.trigger_dagrun import TriggerDagRunOperator
 from airflow.operators.python import PythonOperator
 
-from datetime import timedelta,datetime
 import sys
 
+sys.path.append(
+    "/home/ubuntu/PIPE-Line_data_Stock-Market/.venv/lib/python3.14/site-packages"
+)
 # Import các hàm từ các tập lệnh của bạn
 sys.path.append('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/src/extract')
 sys.path.append('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/src/transform')
 sys.path.append('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/src/load')
+from datetime import timedelta,datetime
 from crawl_extract_companies import crawl_extract_companies
 from crawl_index import crawl_index
 from crawl_industries import crawl_industries

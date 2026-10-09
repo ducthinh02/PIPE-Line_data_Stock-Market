@@ -1,10 +1,14 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.operators.bash import BashOperator
-from datetime import timedelta,datetime
+
 import sys
+sys.path.append(
+    "/home/ubuntu/PIPE-Line_data_Stock-Market/.venv/lib/python3.14/site-packages"
+)
 import subprocess
 import os
+from datetime import timedelta,datetime
 
 sys.path.append('/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/src/extract')
 sys.path.append('/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/src/load')
