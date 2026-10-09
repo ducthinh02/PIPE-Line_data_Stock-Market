@@ -42,6 +42,7 @@ def save_to_json(dataframe, filename):
 def transform_to_database_2():
     
     index_raw  = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/index')
+    index_data = index_raw.get("index",[])
     date = datetime.date.today().strftime("%Y_%m_%d")
     
     index = clean_dataframe(
@@ -52,7 +53,7 @@ def transform_to_database_2():
                 "full_name": item["full_name"],
                 "group": item["group"]
             }   
-            for item in index_raw
+            for item in index_data
         ])
     )
     

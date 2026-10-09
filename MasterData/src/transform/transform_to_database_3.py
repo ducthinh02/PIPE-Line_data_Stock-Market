@@ -41,6 +41,7 @@ def save_to_json(dataframe, filename):
 
 def transform_to_database_3():
     company_raw  = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/company')
+    company_data = company_raw.get("Company",[])
     date = datetime.date.today().strftime("%Y_%m_%d")
     
     industries_for_symbol = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/industries')
@@ -71,7 +72,7 @@ def transform_to_database_3():
                 "outstanding_shares": item["outstanding_shares"],
                 "ceo_name": item["ceo_name"]
             }   
-            for item in company_raw
+            for item in company_data
         ])
         )
         
