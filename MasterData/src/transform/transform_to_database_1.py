@@ -53,27 +53,29 @@ def save_to_json(dataframe, filename):
     
     print(f"Saved dataframe to {filename}")
 
-def inspect_data_type(name, data):
-    print(f"\n--- Kiểm tra {name} ---")
-    print("Kiểu dữ liệu:", type(data).__name__)
+# def inspect_data_type(name, data):
+#     print(f"\n--- Kiểm tra {name} ---")
+#     print("Kiểu dữ liệu:", type(data).__name__)
 
-    if isinstance(data, list):
-        print("Số phần tử:", len(data))
+#     if isinstance(data, list):
+#         print("Số phần tử:", len(data))
 
-        for i, item in enumerate(data[:5]):
-            print(f"Phần tử [{i}]: {type(item).__name__}")
-            if not isinstance(item, dict):
-                print("Giá trị:", repr(item)[:200])
+#         for i, item in enumerate(data[:5]):
+#             print(f"Phần tử [{i}]: {type(item).__name__}")
+#             if not isinstance(item, dict):
+#                 print("Giá trị:", repr(item)[:200])
     
 def transform_to_database_1():
     
-    market = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/company')
-    industries = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/industries')
-    market_group = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/index')
-
-    inspect_data_type("market", market)
-    inspect_data_type("industries", industries)
-    inspect_data_type("market_group", market_group)
+    market_data = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/company')
+    market = market_data.get("Company",[])
+    industries= read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/industries')
+    market_group_data = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/index')
+    market_group = market_group_data.get("index",[])
+    
+    # inspect_data_type("market", market)
+    # inspect_data_type("industries", industries)
+    # inspect_data_type("market_group", market_group)
     
     date = datetime.date.today().strftime("%Y_%m_%d")
     
