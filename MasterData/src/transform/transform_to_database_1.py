@@ -114,4 +114,4 @@ def transform_to_database_1():
     
     save_to_json(index_groups,groups_path)
     
-# transform_to_database_1()
+transform_to_database_1()
