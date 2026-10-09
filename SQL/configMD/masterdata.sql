@@ -1,8 +1,8 @@
-CREATE DATABASE masterdata;
+CREATE DATABASE stock_datasource;
 
-\c masterdata;
+\c stock_datasource;
 
-CREATE TABLE IF NOT EXISTS industries(
+CREATE TABLE IF NOT EXISTS INDUSTRIES(
     industry_id SERIAL PRIMARY KEY,
     industries_update_time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 
@@ -38,6 +38,13 @@ CREATE TABLE IF NOT EXISTS COMPANIES(
     FOREIGN KEY (exchange_id) REFERENCES EXCHANGE(exchange_id)
 );
 
+CREATE TABLE IF NOT EXISTS INDEX_GROUPS(
+    index_group_id SERIAL PRIMARY KEY,
+    INDEX_GROUPS_update_time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    group_name VARCHAR(20) UNIQUE NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS CK_INDEX(
     index_id SERIAL PRIMARY KEY,
     ck_index_update_time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -47,17 +54,8 @@ CREATE TABLE IF NOT EXISTS CK_INDEX(
     index_description TEXT NOT NULL,
     index_group_id INTEGER NOT NULL,
     CONSTRAINT unique_ck_index UNIQUE (index_code,index_name),
-    CONSTRAINT fk_ck_index_group_id
-        FOREIGN KEY (index_group_id) 
-        REFERENCES INDEX_GROUPS(index_group_id)
+    CONSTRAINT fk_ck_index_group_id FOREIGN KEY (index_group_id) REFERENCES INDEX_GROUPS(index_group_id)
 );
-
-CREATE TABLE IF NOT EXISTS INDEX_GROUPS(
-    index_group_id SERIAL PRIMARY KEY,
-    INDEX_GROUPS_update_time_stamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-
-    group_name VARCHAR(20) UNIQUE NOT NULL
-)
 
 CREATE INDEX idx_company_time_stamp ON companies(company_update_time_stamp);
 CREATE INDEX idx_company_exchange_id ON companies(exchange_id);

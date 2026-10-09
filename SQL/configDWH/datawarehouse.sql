@@ -2,9 +2,9 @@ CREATE SEQUENCE company_id_seq;
 CREATE SEQUENCE time_id_seq;
 CREATE SEQUENCE news_id_seq;
 CREATE SEQUENCE topic_id_seq;
-CREATE SEQUENCE candles_id_seq;
+CREATE SEQUENCE candle_id_seq;
 CREATE SEQUENCE news_company_id_seq;
-CREATE SEQUENCE news_topic_id_seq;
+-- CREATE SEQUENCE news_topic_id_seq;
 CREATE SEQUENCE candles_index_id_seq;
 CREATE SEQUENCE dim_index_id_seq;
 CREATE SEQUENCE retail_id_seq;
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS dim_time (
 -- =========================================================
 
 CREATE TABLE IF NOT EXISTS dim_news (
-    news_id INTEGER DEFAULT NEXTVAL('new_id_seq') PRIMARY KEY,
+    news_id INTEGER DEFAULT NEXTVAL('news_id_seq') PRIMARY KEY,
 
     news_time_id INTEGER,
 
@@ -78,28 +78,54 @@ CREATE TABLE IF NOT EXISTS dim_news (
     news_datatype VARCHAR,
     news_overall_sentiment_label VARCHAR,
     news_overall_sentiment_score DOUBLE NOT NULL, 
-    time_stamp TIMESTAMP
+    time_stamp TIMESTAMP,
 
     FOREIGN KEY (news_time_id)
         REFERENCES dim_time(time_id)
 );
 
-
 -- =========================================================
--- 5. DIMENSION: TOPICS
+-- 5. DIMENSION: INDEX
 -- =========================================================
 
-CREATE TABLE IF NOT EXISTS dim_topics (
-    topic_id INTEGER DEFAULT NEXTVAL('topic_id_seq') PRIMARY KEY,
-
-    topic_name VARCHAR NOT NULL,
-
-    CONSTRAINT unique_topic_name UNIQUE (topic_name)
-
+CREATE TABLE IF NOT EXISTS dim_index (
+    dim_index_id INTEGER DEFAULT NEXTVAL('dim_index_id_seq') PRIMARY KEY,
+    index_code varchar NOT NULL,
+    index_name varchar NOT NULL,
+    index_description varchar ,
+    group_name varchar NOT NULL
 );
 
+-- =========================================
+-- 6. DIMENSION RETAIL
+-- =========================================
+
+CREATE TABLE IF NOT EXISTS dim_retail (
+    retail_id INTEGER DEFAULT NEXTVAL('retail_id_seq') PRIMARY KEY,
+    retail_name VARCHAR NOT NULL UNIQUE
+);
+
+-- =========================================
+-- 7. DIMENSION RETAIL
+-- =========================================
+
+CREATE TABLE IF NOT EXISTS dim_currency (
+    currency_id INTEGER DEFAULT NEXTVAL('currency_id_seq') PRIMARY KEY,
+    currency_code VARCHAR NOT NULL UNIQUE,
+    currency_name VARCHAR NOT NULL
+);
+
+-- CREATE TABLE IF NOT EXISTS dim_topics (
+--     topic_id INTEGER DEFAULT NEXTVAL('topic_id_seq') PRIMARY KEY,
+
+--     topic_name VARCHAR NOT NULL,
+
+--     CONSTRAINT unique_topic_name UNIQUE (topic_name)
+
+-- );
+
 -- =========================================================
--- 7. FACT: CANDLES
+-- 8. FACT: CANDLES
 -- =========================================================
 
 CREATE TABLE IF NOT EXISTS fact_candles (
@@ -130,11 +156,11 @@ CREATE TABLE IF NOT EXISTS fact_candles (
 
 
 -- =========================================================
--- 8. FACT: NEWS - COMPANIES
+-- 9. FACT: NEWS - COMPANIES
 -- =========================================================
 
 CREATE TABLE IF NOT EXISTS fact_news_companies (
-    news_company_id INTEGER DEFAULT NEXTVAL('new_company_id_seq') PRIMARY KEY,
+    news_company_id INTEGER DEFAULT NEXTVAL('news_company_id_seq') PRIMARY KEY,
 
     news_company_company_id INTEGER NOT NULL,
 
@@ -153,26 +179,30 @@ CREATE TABLE IF NOT EXISTS fact_news_companies (
 
 
 -- =========================================================
--- 9. FACT: NEWS - TOPICS
+-- 10. FACT: NEWS - TOPICS
 -- =========================================================
 
-CREATE TABLE IF NOT EXISTS fact_news_topics (
-    news_topic_id INTEGER DEFAULT NEXTVAL('new_topic_id_seq') PRIMARY KEY,
+-- CREATE TABLE IF NOT EXISTS fact_news_topics (
+--     news_topic_id INTEGER DEFAULT NEXTVAL('new_topic_id_seq') PRIMARY KEY,
 
-    news_topic_news_id INTEGER NOT NULL,
+--     news_topic_news_id INTEGER NOT NULL,
 
-    news_topic_topic_id INTEGER NOT NULL,
+--     news_topic_topic_id INTEGER NOT NULL,
 
-    news_topic_relevance_score FLOAT,
+--     news_topic_relevance_score FLOAT,
 
-    FOREIGN KEY (news_topic_news_id)
-        REFERENCES dim_news(news_id),
+--     FOREIGN KEY (news_topic_news_id)
+--         REFERENCES dim_news(news_id),
 
-    FOREIGN KEY (news_topic_topic_id)
-        REFERENCES dim_topics(topic_id)
-);
+--     FOREIGN KEY (news_topic_topic_id)
+--         REFERENCES dim_topics(topic_id)
+-- );
 
-CREATE TABLE IF NOT EXISTS fct_candles_index {
+-- =========================================================
+-- 11. FACT: NEWS - TOPICS
+-- =========================================================
+
+CREATE TABLE IF NOT EXISTS fct_candles_index (
     candles_index_id INTEGER DEFAULT NEXTVAL('candles_index_id_seq') PRIMARY KEY,
     candles_dim_index_id INTEGER ,
     candles_index_volume float NOT NULL,
@@ -188,28 +218,10 @@ CREATE TABLE IF NOT EXISTS fct_candles_index {
 
     FOREIGN KEY(trande_time_id)
         REFERENCES dim_time(time_id)
-};
-
-CREATE TABLE IF NOT EXISTS dim_index {
-    dim_index_id INTEGER DEFAULT NEXTVAL('dim_index_id_seq') PRIMARY KEY,
-    index_code varchar NOT NULL,
-    index_name varchar NOT NULL,
-    index_description varchar ,
-    group_name varchar NOT NULL
-}
-
--- =========================================
--- DIM RETAIL
--- =========================================
-
-CREATE TABLE IF NOT EXISTS dim_retail (
-    retail_id INTEGER DEFAULT NEXTVAL('retail_id_seq') PRIMARY KEY,
-    retail_name VARCHAR NOT NULL UNIQUE
 );
 
-
 -- =========================================
--- FACT RETAIL
+-- 12. FACT: RETAIL
 -- =========================================
 
 CREATE TABLE IF NOT EXISTS fact_retail (
@@ -229,15 +241,12 @@ CREATE TABLE IF NOT EXISTS fact_retail (
     FOREIGN KEY (time_id) REFERENCES dim_time(time_id)
 );
 
-
-CREATE TABLE IF NOT EXISTS dim_currency (
-    currency_id INTEGER DEFAULT NEXVAL('currency_id_seq') PRIMARY KEY,
-    currency_code VARCHAR NOT NULL UNIQUE,
-    currency_name VARCHAR NOT NULL
-);
+-- =========================================
+-- 13. FACT: RETAIL
+-- =========================================
 
 CREATE TABLE IF NOT EXISTS fact_rate (
-    fact_rate_id INTEGER DEFAULT NEXVAL('fact_rate_id_seq') PRIMARY KEY
+    fact_rate_id INTEGER DEFAULT NEXTVAL('fact_rate_id_seq') PRIMARY KEY,
     currency_id INTEGER NOT NULL,
     time_id INTEGER NOT NULL,
 
