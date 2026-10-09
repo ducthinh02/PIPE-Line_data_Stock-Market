@@ -65,7 +65,7 @@ def load_json_to_db_1():
     # Insert data into 'industries' table
     insert_data_from_json(
         get_latest_file_in_directory(
-            '/home/ubuntu/PIPE-Line_data_Stock-Market/Master Data/data/processed/transformed_to_database_industries', 
+            '/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/processed/transformed_to_database_industries', 
             '.json'
         ),
         'industries',
@@ -76,7 +76,7 @@ def load_json_to_db_1():
     # Insert data into 'exchange' table
     insert_data_from_json(
         get_latest_file_in_directory(
-            '/home/ubuntu/PIPE-Line_data_Stock-Market/Master Data/data/processed/transformed_to_database_exchanges/', 
+            '/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/processed/transformed_to_database_exchanges/', 
             '.json'
         ),
         'EXCHANGE',
@@ -86,7 +86,7 @@ def load_json_to_db_1():
     # Insert data into 'exchange' table
     insert_data_from_json(
         get_latest_file_in_directory(
-        '/home/ubuntu/PIPE-Line_data_Stock-Market/Master Data/data/processed/transformed_to_database_index_group', 
+        '/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/processed/transformed_to_database_index_group', 
         '.json'
             ),
         'INDEX_GROUPS',
