@@ -170,4 +170,4 @@ def load_api_to_parquet():
     # Path to the directory to save the Parquet files
     output_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_index_ohlcv_to_dl'
     load_db_ohlcv_to_dl(input_directory, output_directory)
-load_api_to_parquet()
+# load_api_to_parquet()

@@ -197,5 +197,5 @@ def crawl_RSS_news():
     # 4. Save processed JSON
     save_processed_news(processed_data)
     
-crawl_RSS_news()
+# crawl_RSS_news()
 

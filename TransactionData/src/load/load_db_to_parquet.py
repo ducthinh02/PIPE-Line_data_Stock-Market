@@ -50,5 +50,5 @@ def load_db_to_parquet():
     query_to_parquet(query=query[1],conn=conn, 
                     path_query_file=index_output)
     
-load_db_to_parquet()
+# load_db_to_parquet()
     

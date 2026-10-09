@@ -45,5 +45,5 @@ def crawl_ohlcv_index():
                     indent=2,
                     default= str)
     
-crawl_ohlcv_index()
+# crawl_ohlcv_index()
     

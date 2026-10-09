@@ -111,4 +111,4 @@ def crawl_extract_companies():
 
     save_raw_news(data)
     
-crawl_extract_companies()
+# crawl_extract_companies()

@@ -114,4 +114,4 @@ def crawl_ohlcv_market_macro() -> dict:
                 default=str
             )
             
-crawl_ohlcv_market_macro()
+# crawl_ohlcv_market_macro()
