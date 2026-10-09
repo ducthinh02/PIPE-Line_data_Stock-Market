@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine,URL
 import os
 import json
 import datetime
@@ -63,8 +63,16 @@ def transform_to_database_2():
     port = os.getenv("POSTGRES_PORT")
     database = os.getenv("POSTGRES_DB")
     
-    connection_str = f"postgresql+psycopg2://{username}:{password}@{host}:{port}/{database}"
-    engine= create_engine(connection_str)
+    db_url = URL.create(
+        drivername = "postgresql+psycopg2",
+        username = os.getenv("POSTGRES_USER"),
+        password = os.getenv("POSTGRES_PASSWORD"),
+        host = os.getenv("POSTGRES_HOST"),
+        port = os.getenv("POSTGRES_PORT"),
+        database = os.getenv("POSTGRES_DB"),
+        
+    )
+    engine= create_engine(db_url)
     
     query = """SELECT * FROM INDEX_GROUPS"""
     
