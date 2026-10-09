@@ -1,6 +1,6 @@
 import duckdb
 
-path_duckdb = 'D:/ETL-pipeline data analytics securities/datawarehouse.duckdb'
+path_duckdb = '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb'
 
 conn = duckdb.connect(database=path_duckdb)
 

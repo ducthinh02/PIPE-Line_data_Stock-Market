@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS CK_INDEX(
     CONSTRAINT unique_ck_index UNIQUE (index_code,index_name),
     CONSTRAINT fk_ck_index_group_id
         FOREIGN KEY (index_group_id) 
-        REFERENCES MARKET_GROUP(index_group_id)
+        REFERENCES INDEX_GROUPS(index_group_id)
 );
 
 CREATE TABLE IF NOT EXISTS INDEX_GROUPS(
