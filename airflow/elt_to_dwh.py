@@ -77,7 +77,7 @@ with DAG(
 
     load_parquet_to_hdfs_task = BashOperator(
         task_id='load_parquet_to_hdfs',
-        bash_command="bash /home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/src/load/load_parquet_to_hdfs.sh",
+        bash_command="/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/src/load/load_parquet_to_hdfs.sh",
     )
 
     process_companies_vs_index_task = PythonOperator(
