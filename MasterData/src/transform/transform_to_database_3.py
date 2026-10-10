@@ -3,7 +3,7 @@ import numpy as np
 import json
 import os
 from dotenv import load_dotenv
-import datetime
+from datetime import datetime
 from sqlalchemy import create_engine, URL
 
 load_dotenv()
@@ -63,12 +63,12 @@ def transform_to_database_3():
             {
                 "ticker_company": item["symbol"],
                 "company_name" : item["company_name"],
-                "founded_date": item["founded_date"],
+                "founded_date": datetime.strptime(item["founded_date"],"%d/%m/%Y").date().isoformat(),
                 "charter_capital": item["charter_capital"],
                 "number_of_employees": item["number_of_employees"],
                 "exchange": item["exchange"],
                 "company_type": item["company_type"],
-                "listing_date":item["listing_date"],
+                "listing_date": datetime.strptime(item["listing_date"],"%d/%m/%Y").date().isoformat(),
                 "listing_price": item["listing_price"],
                 "listed_volume":item["listed_volume"],
                 "outstanding_shares": item["outstanding_shares"],
