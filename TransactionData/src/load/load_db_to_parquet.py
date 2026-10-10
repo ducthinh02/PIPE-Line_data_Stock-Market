@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, URL
 import pandas as pd 
 import datetime
 from dotenv import load_dotenv
@@ -27,13 +27,16 @@ def query_to_parquet(query,conn, path_query_file):
     
 def load_db_to_parquet():
     
-    user= os.getenv("POSTGRES_USER")
-    password= os.getenv("POSTGRES_PASSWORD")
-    host= os.getenv("POSTGRES_HOST")
-    post= os.getenv("POSTGRES_PORT")
-    database= os.getenv("POSTGRES_DB")
-    
-    conn = create_engine(f"postgresql://{user}:{password}@{host}:{post}/{database}")
+    db_url = URL.create(
+                drivername= "postgresql+psycopg2",
+                user= os.getenv("POSTGRES_USER"),
+                password= os.getenv("POSTGRES_PASSWORD"),
+                host= os.getenv("POSTGRES_HOST"),
+                post= os.getenv("POSTGRES_PORT"),
+                database= os.getenv("POSTGRES_DB"),
+    )
+
+    conn = create_engine(db_url)
     
     file_path = '/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/src/extract/extract_db_to_parquet.sql'
     
@@ -50,5 +53,5 @@ def load_db_to_parquet():
     query_to_parquet(query=query[1],conn=conn, 
                     path_query_file=index_output)
     
-# load_db_to_parquet()
+load_db_to_parquet()
     
