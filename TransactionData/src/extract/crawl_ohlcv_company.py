@@ -25,7 +25,7 @@ def crawl_ohlcv_company():
         
     }
     
-    for ticker in list_ticker:
+    for i, ticker in enumerate(list_ticker, start=1):
         try:
             print(f"[3] Đang gọi OHLCV: {i}/{len(list_ticker)} - {ticker}", flush=True)
 
