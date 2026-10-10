@@ -44,17 +44,19 @@ def transform_to_database_3():
     company_data = company_raw.get("Company",[])
     date = datetime.date.today().strftime("%Y_%m_%d")
     
-    industries_for_symbol = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/industries')
+    industries_data = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/industries')
     
     industries_for_symbol = clean_dataframe(
         pd.DataFrame([
             {   
                 "symbol":item["symbol"],
-                "industry_name": item["industry_name"]
+                "industry_name": item["icb_name"]
             }
-            for item in industries_for_symbol
-        ])
-    )
+            for item in industries_data
+                    if item.get("icb_level") == 1
+                ]).drop_duplicates()
+        )
+    
     
     company_join_exchange = clean_dataframe(
         pd.DataFrame([
