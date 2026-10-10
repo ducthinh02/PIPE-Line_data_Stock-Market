@@ -39,6 +39,20 @@ def save_to_json(dataframe, filename):
     os.makedirs(os.path.dirname(filename),exist_ok=True)
     dataframe.to_json(filename,orient="records",lines=True)
 
+def normalize_date(value):
+    if value is None or not str(value).strip():
+        return None
+
+    for fmt in ("%d/%m/%Y", "%Y-%m-%d"):
+        try:
+            return datetime.datetime.strptime(
+                str(value).strip(), fmt
+            ).date().isoformat()
+        except ValueError:
+            continue
+
+    raise ValueError(f"Ngày tháng không đúng định dạng: {value!r}")
+
 def transform_to_database_3():
     company_raw  = read_latest_file_in_directory('/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/raw/company')
     company_data = company_raw.get("Company",[])
@@ -63,12 +77,12 @@ def transform_to_database_3():
             {
                 "ticker_company": item["symbol"],
                 "company_name" : item["company_name"],
-                "founded_date": datetime.datetime.strptime(item["founded_date"],"%d/%m/%Y").date().isoformat(),
+                "founded_date": normalize_date(item.get("founded_date")),
                 "charter_capital": item["charter_capital"],
                 "number_of_employees": item["number_of_employees"],
                 "exchange": item["exchange"],
                 "company_type": item["company_type"],
-                "listing_date": datetime.datetime.strptime(item["listing_date"],"%d/%m/%Y").date().isoformat(),
+                "listing_date": normalize_date(item.get("listing_date")),
                 "listing_price": item["listing_price"],
                 "listed_volume":item["listed_volume"],
                 "outstanding_shares": item["outstanding_shares"],
