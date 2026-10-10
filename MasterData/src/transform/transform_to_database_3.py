@@ -4,7 +4,7 @@ import json
 import os
 from dotenv import load_dotenv
 import datetime
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, URL
 
 load_dotenv()
 
@@ -78,14 +78,17 @@ def transform_to_database_3():
         ])
         )
         
-    username = os.getenv("POSTGRES_USER")
-    password = os.getenv("POSTGRES_PASSWORD")
-    host = os.getenv("POSTGRES_HOST")
-    port = os.getenv("POSTGRES_PORT")
-    database = os.getenv("POSTGRES_DB")
+    db_url = URL.create(
+            drivername = "postgresql+psycopg2",
+            username = os.getenv("POSTGRES_USER"),
+            password = os.getenv("POSTGRES_PASSWORD"),
+            host = os.getenv("POSTGRES_HOST"),
+            port = os.getenv("POSTGRES_PORT"),
+            database = os.getenv("POSTGRES_DB"),
+            
+        )
         
-    connection_str = f"postgresql+psycopg2://{username}:{password}@{host}:{port}/{database}"
-    engine= create_engine(connection_str)
+    engine= create_engine(db_url)
         
     query_exchange = """SELECT * FROM EXCHANGE"""
     query_industries = """SELECT * FROM industries"""
