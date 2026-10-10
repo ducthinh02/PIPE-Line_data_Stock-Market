@@ -9,27 +9,39 @@ from tenacity import RetryError
 ref = Reference()
 mkt = Market()
 
-path = "/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/ohlcv_company"
+# path = "/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/ohlcv_company"
+
+path ="D:/ETL-pipeline data analytics securities/TransactionData/data/raw/ohlcv"
 
 def crawl_ohlcv_company():
     
     date_crawl = (date.today() - timedelta(days=1)).strftime("%Y-%m-%d")
-    
+    print("[1] Bắt đầu lấy danh sách ticker", flush=True)
+
     list_ticker = ref.equity.list()["symbol"].tolist()
+    print(f"[2] Lấy được {len(list_ticker)} ticker", flush=True)
+
     dict_equity = {
         
     }
     
     for ticker in list_ticker:
         try:
+            print(f"[3] Đang gọi OHLCV: {i}/{len(list_ticker)} - {ticker}", flush=True)
+
             data_ohlcv = mkt.equity(symbol=ticker).ohlcv(start=date_crawl,
                                             end=date_crawl,
                                             interval="1D")
+            
+            print(f"[4] Đã nhận kết quả: {ticker}", flush=True)
+            
             if data_ohlcv is None :
                 dict_equity[ticker] = []
             else:
                 dict_equity[ticker] = data_ohlcv.to_dict(orient= "records")
         except (ValueError,RetryError) as e:
+            print(f"[ERROR] {ticker}: {type(e).__name__}: {e}", flush=True)
+
             dict_equity[ticker] = []
             continue
         time.sleep(3)
@@ -45,5 +57,5 @@ def crawl_ohlcv_company():
                     indent=2,
                     default= str)
     
-# crawl_ohlcv_company()
+crawl_ohlcv_company()
     
