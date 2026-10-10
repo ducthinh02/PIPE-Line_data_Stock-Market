@@ -3,7 +3,7 @@ import numpy as np
 import json
 import os
 from dotenv import load_dotenv
-from datetime import datetime
+import datetime
 from sqlalchemy import create_engine, URL
 
 load_dotenv()
