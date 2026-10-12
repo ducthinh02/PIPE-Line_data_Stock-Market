@@ -6,6 +6,8 @@ from pyspark.sql import SparkSession
 
 def get_latest_parquet_file(hdfs_directory):
     
+    # hdfs_directory ="" + f"{hdfs_directory}" 
+
     spark = SparkSession(
         SparkSession.builder
         .appName("get latest parquet")
@@ -148,13 +150,14 @@ def transform_to_datawarehouse_1():
     company_file = get_latest_parquet_file(
         "/user/ubuntu/datalake/companies"
     )
+    hdfs_directory = get_latest_parquet_file(company_file)
+    process_company(hdfs_directory)
+    
 
     index_file = get_latest_parquet_file(
         "/user/ubuntu/datalake/index"
     )
-
-    process_company(company_file)
-
-    process_index(index_file)
+    hdfs_directory = get_latest_parquet_file(index_file)
+    process_index(hdfs_directory)
     
     
