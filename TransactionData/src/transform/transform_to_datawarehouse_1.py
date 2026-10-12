@@ -60,7 +60,7 @@ def process_company(parquet_file_path):
     
     conn.execute(
         '''
-            INSERT INTO dim_company(
+            INSERT INTO dim_companies(
                 industry_of_company, 
                 company_name,
                 ticker_company ,
@@ -99,14 +99,14 @@ def process_company(parquet_file_path):
     
     spark.stop()
     
-def process_index(parquet_file_path):
+def process_index(hdfs_directory):
     
     spark = (SparkSession.builder
             .appName("INSERT parquet INTO DUCKDB dim_index")
             .getOrCreate()
             )
     
-    df_spark = spark.read.parquet(parquet_file_path)
+    df_spark = spark.read.parquet(hdfs_directory)
     
     # Hiển thị dữ liệu df spark
     df_spark.printSchema()
