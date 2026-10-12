@@ -9,6 +9,9 @@ from transformers import pipeline
 
 
 def get_late_parquet_file(hdfs_directory):
+    if not hdfs_directory.startswith("hdfs://"):
+            hdfs_directory ="hdfs://localhost:9000" + f"{hdfs_directory}" 
+    
     spark = SparkSession.builder\
             .appName("Get late parquet file")\
                 .getOrCreate()

@@ -11,6 +11,9 @@ from urllib.parse import urlparse
 from pyspark.sql.functions import col
 
 def get_latest_parquet_file(hdfs_directory):
+    if not hdfs_directory.startswith("hdfs://"):
+            hdfs_directory ="hdfs://localhost:9000" + f"{hdfs_directory}" 
+    
     # Initialize Spark session
     spark = SparkSession.builder \
         .appName("Get Latest Parquet File") \
