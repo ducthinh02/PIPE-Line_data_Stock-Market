@@ -34,7 +34,7 @@ def crawl_ohlcv_market_macro() -> dict:
                 return None
             
     
-    data_rate = ret.exchange_rate(date='')
+    data_rate = ret.exchange_rate(date=date_crawl)
     
     oil= yf.Ticker("BZ=F")
     
