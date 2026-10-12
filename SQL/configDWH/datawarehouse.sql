@@ -25,6 +25,8 @@ CREATE TABLE IF NOT EXISTS dim_companies (
 
     founded_date DATE,
 
+    charter_capital INT,
+
     number_of_employees INTEGER NOT NULL,
 
     -- exchange_id INTEGER NOT NULL,
