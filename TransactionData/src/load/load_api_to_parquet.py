@@ -6,6 +6,7 @@ import pyarrow as pa
 import pyarrow.parquet as pp
 import numpy as np 
 load_dotenv()
+from pathlib import Path
 
 def get_latest_file_in_directory(directory, extension):
     
@@ -46,7 +47,41 @@ def convert_ohlcv_json_to_dataframe(data):
     
     return df
 
+def convert_rate_json_to_dataframe(data):
+    
+    rows = []
+    
+    for item in data["rate"]:            
+            rows.append({
+                "currency_code": item.get("currency_code"),
+                "currency_name": item.get("currency_name"),
+                "buy_cash": item.get("buy_cash"),
+                "buy_transfer": item.get("buy_transfer"),
+                "sell": item.get("sell"),
+                "date": item.get("date"),    
+            })
+    
+    df = pd.DataFrame(rows)
+    
+    return df
+
 def save_json_to_parquet(data, output_filepath):
+    # if isinstance(data, dict):
+    #     lengths = {
+    #         key: len(value)
+    #         for key, value in data.items()
+    #         if isinstance(value, (list, tuple))
+    #     }
+
+    #     print("Độ dài các trường:", lengths)
+
+    #     unique_lengths = set(lengths.values())
+    #     if len(unique_lengths) > 1:
+    #         raise ValueError(
+    #             f"Các trường có độ dài khác nhau: {lengths}"
+    #         )
+
+    
     # Convert JSON data to a pyarrow Table
     table = pa.Table.from_pandas(pd.DataFrame(data))
     
@@ -130,14 +165,60 @@ def load_db_ohlcv_to_dl(input_directory, output_directory):
     print(
         f"Saved Parquet file: {output_filepath}"
     )
-        
+
+
+def load_db_rate_to_dl(input_directory, output_directory):
+
+    extension = ".json"
+
+    latest_file = get_latest_file_in_directory(
+        input_directory,
+        extension
+    )
+
+    if latest_file is None:
+        print("No JSON file found.")
+        return
+
+    # Đọc JSON
+    data = read_latest_file_in_directory(
+        latest_file
+    )
+
+    # JSON → DataFrame
+    df = convert_rate_json_to_dataframe(
+        data
+    )
+
+    print(df.info())
+    print(df.head())
+
+    # Giữ nguyên tên file JSON, đổi extension thành parquet
+    filename = os.path.basename(
+        latest_file
+    ).replace(".json", ".parquet")
+
+    output_filepath = os.path.join(
+        output_directory,
+        filename
+    )
+
+    # DataFrame → Parquet
+    save_dataframe_to_parquet(
+        df,
+        output_filepath
+    )
+
+    print(
+        f"Saved Parquet file: {output_filepath}"
+    )
+
 def load_api_to_parquet():
     
-    # chuyển json sang dataframe sang parquet
+    # # # chuyển json sang dataframe sang parquet
     input_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/ohlcv_company'
     # Path to the directory to save the Parquet files
     output_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_ohlcv_company_to_dl'
-    
     
     load_db_ohlcv_to_dl(input_directory, output_directory)
 
@@ -154,7 +235,7 @@ def load_api_to_parquet():
     input_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/ohlcv_retail'
     # Path to the directory to save the Parquet files
     output_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_retail_to_dl'
-    load_db_to_dl(input_directory, output_directory)
+    load_db_ohlcv_to_dl(input_directory, output_directory)
     
     
     # Convert Rate JSON files to Parquet
@@ -162,7 +243,7 @@ def load_api_to_parquet():
     input_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/ohlcv_rate'
     # Path to the directory to save the Parquet files
     output_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_rate_to_dl'
-    load_db_to_dl(input_directory, output_directory)
+    load_db_rate_to_dl(input_directory, output_directory)
     
 
     # chuyển json index ohlcv sang parquet
@@ -170,4 +251,49 @@ def load_api_to_parquet():
     # Path to the directory to save the Parquet files
     output_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_index_ohlcv_to_dl'
     load_db_ohlcv_to_dl(input_directory, output_directory)
+    
+    
+# test thử 2
+    
+    # input_directory = r'D:/PIPE-Line_data_Stock-Market/TransactionData/data/raw/ohlcv'
+    #         # Path to the directory to save the Parquet files
+    # output_directory = r'D:/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_ohlcv_company_to_dl'
+    # Path(output_directory).mkdir(parents=True, exist_ok=True)
+    # load_db_ohlcv_to_dl(input_directory, output_directory)
+
+
+    # # Convert News JSON files to Parquet
+    # # Path to the directory containing the JSON files
+    # input_directory = r'D:/PIPE-Line_data_Stock-Market/TransactionData/data/raw/news'
+    # # Path to the directory to save the Parquet files
+    # output_directory = r'D:/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_news_to_dl'
+    # Path(output_directory).mkdir(parents=True, exist_ok=True)
+    # load_db_to_dl(input_directory, output_directory)
+
+
+    # # Convert Retail JSON files to Parquet
+    # # Path to the directory containing the JSON files
+    # input_directory = r'D:/PIPE-Line_data_Stock-Market/TransactionData/data/raw/retail'
+    # # Path to the directory to save the Parquet files
+    # output_directory = r'D:/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_retail_to_dl'
+    # Path(output_directory).mkdir(parents=True, exist_ok=True)
+    # load_db_ohlcv_to_dl(input_directory, output_directory)
+    
+    
+    # # Convert Rate JSON files to Parquet
+    # # Path to the directory containing the JSON files
+    # input_directory = r'D:/PIPE-Line_data_Stock-Market/TransactionData/data/raw/retail/rate'
+    # # Path to the directory to save the Parquet files
+    # output_directory = r'D:/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_rate_to_dl'
+    # Path(output_directory).mkdir(parents=True, exist_ok=True)
+    # load_db_rate_to_dl(input_directory, output_directory)
+    
+
+    # # chuyển json index ohlcv sang parquet
+    # input_directory = r'D:/PIPE-Line_data_Stock-Market/TransactionData/data/raw/index_ohlcv'
+    # # Path to the directory to save the Parquet files
+    # output_directory = r'D:/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_index_ohlcv_to_dl'
+    # Path(output_directory).mkdir(parents=True, exist_ok=True)
+    # load_db_ohlcv_to_dl(input_directory, output_directory)
+    
 load_api_to_parquet()
