@@ -28,12 +28,12 @@ def query_to_parquet(query,conn, path_query_file):
 def load_db_to_parquet():
     
     db_url = URL.create(
-                drivername= "postgresql+psycopg2",
-                username= os.getenv("POSTGRES_USER"),
-                password= os.getenv("POSTGRES_PASSWORD"),
-                host= os.getenv("POSTGRES_HOST"),
-                post= os.getenv("POSTGRES_PORT"),
-                database= os.getenv("POSTGRES_DB"),
+                drivername="postgresql+psycopg2",
+                username=os.getenv("POSTGRES_USER"),
+                password=os.getenv("POSTGRES_PASSWORD"),
+                host=os.getenv("POSTGRES_HOST"),
+                port=os.getenv("POSTGRES_PORT"),
+                database=os.getenv("POSTGRES_DB"),
     )
 
     conn = create_engine(db_url)
