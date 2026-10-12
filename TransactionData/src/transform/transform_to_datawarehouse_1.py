@@ -117,6 +117,9 @@ def process_index(parquet_file_path):
     
     arrow_table = pa.Table.from_pandas(pandas_dataframe)
     
+    print(arrow_table.schema)
+
+    
     # đường dẫn datawarehouse.duckdb
     database_path = '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb'
     
