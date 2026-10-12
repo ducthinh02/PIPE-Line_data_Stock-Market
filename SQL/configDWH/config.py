@@ -1,14 +1,14 @@
 import duckdb
 import os
 
-path_duckdb = '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb'
+database_path = '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb'
 
-if os.path.exists(path_duckdb):
-    os.remove(path_duckdb)
+if os.path.exists(database_path):
+    os.remove(database_path)
     
-conn = duckdb.connect(database=path_duckdb)
+conn = duckdb.connect(database=database_path)
 
-path_sql = '/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/src/extract/extract_db_to_parquet.sql'
+path_sql = '/home/ubuntu/PIPE-Line_data_Stock-Market/SQL/configDWH/datawarehouse.sql'
 
 with open(path_sql,'r', encoding='utf-8') as db:
     sql_script = db.read()

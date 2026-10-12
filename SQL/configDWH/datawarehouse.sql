@@ -15,7 +15,9 @@ CREATE SEQUENCE fact_rate_id_seq;
 CREATE TABLE IF NOT EXISTS dim_companies (
     company_id INTEGER DEFAULT NEXTVAL('company_id_seq') PRIMARY KEY,
 
-    industry_id INTEGER NOT NULL,
+    -- industry_id INTEGER NOT NULL,
+
+    industry_of_company TEXT,
 
     company_name TEXT NOT NULL,
 
@@ -25,7 +27,9 @@ CREATE TABLE IF NOT EXISTS dim_companies (
 
     number_of_employees INTEGER NOT NULL,
 
-    exchange_id INTEGER NOT NULL,
+    -- exchange_id INTEGER NOT NULL,
+
+    exchange_of_company TEXT,
 
     company_type VARCHAR(10),
 
