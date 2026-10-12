@@ -49,6 +49,8 @@ def process_company(parquet_file_path):
     
     arrow_table = pa.Table.from_pandas(pandas_dataframe)
     
+    print(arrow_table.schema)
+    
     # đường dẫn datawarehouse.duckdb
     database_path = '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb'
     
@@ -60,9 +62,7 @@ def process_company(parquet_file_path):
         '''
             INSERT INTO dim_company(
                 industry_of_company, 
-                
-                company_update_time_stamp ,
-                
+                company_name,
                 ticker_company ,
                 founded_date ,
                 charter_capital,
@@ -73,13 +73,12 @@ def process_company(parquet_file_path):
                 listing_price ,                            
                 listed_volume ,                       
                 outstanding_shares,
-                ceo_name
+                ceo_name,
+                company_update_time_stamp 
             )
             SELECT
             industry_of_company, 
-
-            company_update_time_stamp ,
-
+            company_name,
             ticker_company ,
             founded_date ,
             charter_capital,
@@ -90,8 +89,9 @@ def process_company(parquet_file_path):
             listing_price ,                            
             listed_volume ,                       
             outstanding_shares,
-            ceo_name
-            FORM arrow_table
+            ceo_name,
+            company_update_time_stamp
+            FROM arrow_table
         '''
         
     )
