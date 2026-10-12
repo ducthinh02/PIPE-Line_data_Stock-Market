@@ -62,7 +62,7 @@ fi
 # done
 
 # load news
-local_directory=/home/anhcu/Final_ETL_App/etl-app/elt/data/completed/load_api_news_to_dl
+local_directory=/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_news_to_dl
 hdfs_directory=/user/ubuntu/datalake/news
 
 # Find the latest Parquet file
@@ -80,7 +80,7 @@ else
 fi
 
 # load ohlcv index
-local_directory=/home/anhcu/Final_ETL_App/etl-app/elt/data/completed/load_api_index_ohlcv_to_dl
+local_directory=/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_index_ohlcv_to_dl
 hdfs_directory=/user/ubuntu/datalake/ohlcv/ohlcv_index
 
 # Find the latest Parquet file
@@ -99,7 +99,7 @@ fi
 
 
 # load market marco
-local_directory=/home/anhcu/Final_ETL_App/etl-app/elt/data/completed/load_api_retail_to_dl
+local_directory=/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_retail_to_dl
 hdfs_directory=/user/ubuntu/datalake/ohlcv/ohlcv_retail
 
 # Find the latest Parquet file
