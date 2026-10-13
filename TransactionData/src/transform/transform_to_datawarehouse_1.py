@@ -111,20 +111,22 @@ def process_company(parquet_file_path):
     
     spark.stop()
     
-def process_index(hdfs_directory):
+def process_index(parquet_file_path):
     
     spark = (SparkSession.builder
             .appName("INSERT parquet INTO DUCKDB dim_index")
             .getOrCreate()
             )
     
-    df_spark = spark.read.parquet(hdfs_directory)
+    print("HDFS path:", parquet_file_path)
+    
+    df_spark = spark.read.parquet(parquet_file_path)
     
     # Hiển thị dữ liệu df spark
+    print("Số dòng Spark đọc được:", df_spark.count())
     df_spark.printSchema()
-    
-    df_spark.show()
-    
+    df_spark.show(10, truncate=False)
+        
     pandas_dataframe = df_spark.toPandas()
     
     arrow_table = pa.Table.from_pandas(pandas_dataframe)
@@ -136,6 +138,20 @@ def process_index(hdfs_directory):
     database_path = '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb'
     
     conn = duckdb.connect(database=database_path)
+    
+    print("Database đang sử dụng:", database_path)
+
+    print(
+        "Số dòng trong Arrow:",
+        arrow_table.num_rows
+    )
+
+    print(
+        "Số dòng hiện có trong dim_index:",
+        conn.execute(
+            "SELECT COUNT(*) FROM dim_index"
+        ).fetchone()[0]
+    )
     
     conn.register("arrow_table",arrow_table)
     
