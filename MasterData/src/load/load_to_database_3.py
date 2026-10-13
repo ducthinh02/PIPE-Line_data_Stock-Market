@@ -36,7 +36,12 @@ def insert_data_from_json(file_path, table_name, columns, conflict_columns):
     query = f"""INSERT INTO {table_name} ({columns_str})
             VALUES ({placeholder})
             ON CONFLICT ({conflict_columns_str}) 
-            DO NOTHING"""
+            DO UPDATE SET
+                company_name = COALESCE(
+                    EXCLUDED.company_name,
+                    companies.company_name
+                )
+            """
     
     conn = psycopg2.connect(
         host=os.getenv("POSTGRES_HOST"),
@@ -76,4 +81,4 @@ def load_json_to_db_3():
     )
 
     
-# load_json_to_db_3()
+load_json_to_db_3()
