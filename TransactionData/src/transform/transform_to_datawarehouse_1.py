@@ -90,6 +90,20 @@ def process_company(parquet_file_path):
             outstanding_shares,
             ceo_name,
             FROM arrow_table
+            ON CONFLICT (ticker_company)
+            DO UPDATE SET 
+                industry_of_company = EXCLUDED.industry_of_company,
+                company_name = EXCLUDED.company_name,
+                founded_date = EXCLUDED.founded_date,
+                charter_capital = EXCLUDED.charter_capital,
+                number_of_employees = EXCLUDED.number_of_employees,
+                exchange_of_company = EXCLUDED.exchange_of_company,
+                company_type = EXCLUDED.company_type,
+                listing_date = EXCLUDED.listing_date,
+                listing_price = EXCLUDED.listing_price,
+                listed_volume = EXCLUDED.listed_volume,
+                outstanding_shares = EXCLUDED.outstanding_shares,
+                ceo_name = EXCLUDED.ceo_name;
         '''
         
     )
@@ -139,6 +153,11 @@ def process_index(hdfs_directory):
             index_description,
             group_name
             FROM arrow_table
+            ON CONFLICT(index_code)
+            DO UPDATE SET
+                index_name = EXCLUDED.index_name,
+                index_description = EXCLUDED.index_description,
+                group_name = EXCLUDED.group_name;
         '''
         
     )
