@@ -22,12 +22,13 @@ def get_latest_parquet_file(hdfs_directory):
     # lấy danh sách các file parquet dưới dạng metadata
     files_df = spark.read.format("binaryFile").load(hdfs_directory + "/*.parquet")
 
-    # tạo cột file_name với dữ liệu là tên path
-    files_df = files_df.withColumn("file_name", input_file_name())
-
-    # sắp xếp file theo thứ tứ thời gian gần nhất và lấy file đứng đầu
-    latest_file = files_df.orderBy(
-        "modificationTime", ascending=False).limit(1).collect()[0].file_name
+    # sắp xếp file theo thứ tự từ mới nhất 
+    latest_file = (
+        files_df
+        .orderBy("modificationTime", ascending=False)
+        .limit(1)
+        .collect()[0]["path"]
+    )
 
     print(latest_file)
 
@@ -87,7 +88,7 @@ def process_retail(parquet_file_path):
     df_spark_ohlcv.show()
     
     # Connect to DuckDB
-    database_path = 'D:/ETL-pipeline data analytics securities/datawarehouse.duckdb'
+    database_path = '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb'
     conn = duckdb.connect(database=database_path)
     
     

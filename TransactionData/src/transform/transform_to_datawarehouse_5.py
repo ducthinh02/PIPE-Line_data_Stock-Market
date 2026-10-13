@@ -21,12 +21,15 @@ def get_late_parquet_file(hdfs_directory):
                 .getOrCreate()
     
     # lấy metadata của parquet file 
-    file_df = spark.read.format("binaryFile").load(hdfs_directory + "/*.parquet")
+    files_df = spark.read.format("binaryFile").load(hdfs_directory + "/*.parquet")
     
-    file_df = file_df.withColumn("file_name" , input_file_name())
-    
-    latest_file = file_df.orderBy(
-        "modificationTime", ascending = False).limit(1).collect()[0].file_name
+    # sắp xếp file theo thứ tứ thời gian gần nhất và lấy file đứng đầu
+    latest_file = (
+            files_df
+            .orderBy("modificationTime", ascending=False)
+            .limit(1)
+            .collect()[0]["path"]
+            )
     
     spark.stop()
     
