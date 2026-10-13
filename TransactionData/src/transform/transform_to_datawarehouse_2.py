@@ -188,7 +188,7 @@ def process(parquet_file_path):
     elif "ohlcv_companies" in parquet_file_path:
         
         # Rename columns for clarity
-        df_spark_ohlcv = df_spark_ohlcv.withColumnRenamed("ticker", "ticket_company") \
+        df_spark_ohlcv = df_spark_ohlcv.withColumnRenamed("ticker", "ticker_company") \
             .withColumnRenamed("time", "time_stamp") 
     
         df_company_id = conn.execute(
