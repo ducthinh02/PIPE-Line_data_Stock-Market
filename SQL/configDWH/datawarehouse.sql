@@ -57,11 +57,11 @@ CREATE TABLE IF NOT EXISTS dim_time (
 
     date DATE NOT NULL,
 
-    day_of_week INTEGER,
+    day_of_week VARCHAR(10),
 
-    month INTEGER,
+    month VARCHAR(10),
 
-    quarter INTEGER,
+    quarter VARCHAR(10),
 
     year INTEGER
 );
