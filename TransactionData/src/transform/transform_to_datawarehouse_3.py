@@ -492,7 +492,7 @@ def process_rate(parquet_file_path):
 def transform_to_datawarehouse_3():
     # tạo fact_candles:
     
-    retail_ohlcv_file_path = '/datalake/ohlcv/ohlcv_retail'
+    retail_ohlcv_file_path = '/user/ubuntu/datalake/ohlcv/ohlcv_retail'
     retail_parquet_file_path = get_latest_parquet_file(retail_ohlcv_file_path)
     process_retail(retail_parquet_file_path)
     
