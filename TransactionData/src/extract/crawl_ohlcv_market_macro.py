@@ -53,7 +53,9 @@ def crawl_ohlcv_market_macro() -> dict:
     }
 )
     
-    today_data_iron = yf.Ticker("TIO=F").history(period= "1d", interval="1D")
+    today_data_iron = yf.Ticker("HRC=F").history(start=date_crawl,
+        end=(datetime.strptime(date_crawl, "%Y-%m-%d").date() + timedelta(days=1)).strftime("%Y-%m-%d"),
+        interval="1d")
     today_data_iron = today_data_iron.reset_index()
     today_data_iron = today_data_iron.rename(
         columns={
