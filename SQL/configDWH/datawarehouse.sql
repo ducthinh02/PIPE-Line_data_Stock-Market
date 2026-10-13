@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS dim_news (
 
 CREATE TABLE IF NOT EXISTS dim_index (
     dim_index_id INTEGER DEFAULT NEXTVAL('dim_index_id_seq') PRIMARY KEY,
-    index_code varchar NOT NULL,
+    index_code varchar UNIQUE NOT NULL,
     index_name varchar NOT NULL,
     index_description varchar ,
     group_name varchar NOT NULL
