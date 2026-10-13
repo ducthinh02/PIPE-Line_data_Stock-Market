@@ -2,9 +2,6 @@
 SELECT 
 
     industry_name as industry_of_company, 
-
-    company_update_time_stamp ,
-
     ticker_company ,
     founded_date ,
     charter_capital,
