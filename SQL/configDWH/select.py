@@ -1,26 +1,29 @@
 import duckdb
 
-path_duckdb = '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb'
+database_path = '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb'
 
-conn = duckdb.connect(database=path_duckdb)
+conn = duckdb.connect(database=database_path)
 
-conn.sql("SELECT * FROM dim_companies LIMIT 10;").show()
-conn.sql("SELECT COUNT(*) FROM dim_companies;").show()
+conn.execute("""
+    ALTER TABLE dim_time
+    ALTER COLUMN day_of_week SET DATA TYPE VARCHAR
+""")
 
-conn.sql("SELECT * FROM dim_time LIMIT 10;").show()
-conn.sql("SELECT COUNT(*) FROM dim_time;").show()
+conn.execute("""
+    ALTER TABLE dim_time
+    ALTER COLUMN month SET DATA TYPE VARCHAR
+""")
 
-conn.sql("SELECT * FROM dim_news LIMIT 10;").show()
-conn.sql("SELECT COUNT(*) FROM dim_news;").show()
+conn.close()
 
-conn.sql("SELECT * FROM dim_topics LIMIT 10;").show()
-conn.sql("SELECT COUNT(*) FROM dim_topics;").show()
+print("Đã đổi kiểu dữ liệu day_of_week và month sang VARCHAR.")
 
-conn.sql("SELECT * FROM fact_candles LIMIT 10;").show()
-conn.sql("SELECT COUNT(*) FROM fact_candles;").show()
+import duckdb
 
-conn.sql("SELECT * FROM fact_news_companies LIMIT 10;").show()
-conn.sql("SELECT COUNT(*) FROM fact_news_companies;").show()
+conn = duckdb.connect(
+    '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb',
+    read_only=True
+)
 
-conn.sql("SELECT * FROM fact_news_topics LIMIT 10;").show()
-conn.sql("SELECT COUNT(*) FROM fact_news_topics;").show()
+print(conn.execute("DESCRIBE dim_time").fetchdf())
+conn.close()
