@@ -37,10 +37,19 @@ def insert_data_from_json(file_path, table_name, columns, conflict_columns):
             VALUES ({placeholder})
             ON CONFLICT ({conflict_columns_str}) 
             DO UPDATE SET
-                company_name = COALESCE(
-                    EXCLUDED.company_name,
-                    companies.company_name
-                )
+                industry_id = EXCLUDED.industry_id,
+                exchange_id = EXCLUDED.exchange_id,
+                founded_date = EXCLUDED.founded_date,
+                charter_capital = EXCLUDED.charter_capital,
+                number_of_employees = EXCLUDED.number_of_employees,
+                company_type = EXCLUDED.company_type,
+                listing_date = EXCLUDED.listing_date,
+                listing_price = EXCLUDED.listing_price,
+                listed_volume = EXCLUDED.listed_volume,
+                outstanding_shares = EXCLUDED.outstanding_shares,
+                ceo_name = EXCLUDED.ceo_name,
+                company_name = EXCLUDED.company_name,
+                company_update_time_stamp = CURRENT_TIMESTAMP
             """
     
     conn = psycopg2.connect(
