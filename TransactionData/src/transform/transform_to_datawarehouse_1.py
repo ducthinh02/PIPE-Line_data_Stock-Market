@@ -138,7 +138,7 @@ def process_index(hdfs_directory):
             index_name,
             index_description,
             group_name
-            FORM arrow_table
+            FROM arrow_table
         '''
         
     )
