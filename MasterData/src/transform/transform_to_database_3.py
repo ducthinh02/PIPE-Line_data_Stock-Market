@@ -134,9 +134,9 @@ def transform_to_database_3():
         left_on= "ticker_company",
         right_on= "symbol"
     )[
-        ["industry_id","exchange_id","ticker_company","company_name","founded_date","charter_capital","number_of_employees",
+        ["industry_id","exchange_id","ticker_company","founded_date","charter_capital","number_of_employees",
         "company_type","listing_date","listing_price","listed_volume",
-        "outstanding_shares","ceo_name"]
+        "outstanding_shares","ceo_name","company_name",]
     ]
                 
     company_path = (f"/home/ubuntu/PIPE-Line_data_Stock-Market/MasterData/data/processed/transformed_to_database_company/"
