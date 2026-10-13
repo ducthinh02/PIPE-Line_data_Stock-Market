@@ -15,7 +15,8 @@ SELECT
     listing_price ,                            
     listed_volume ,                       
     outstanding_shares,
-    ceo_name
+    ceo_name,
+    company_name
 FROM COMPANIES c
 LEFT JOIN industries i ON c.industry_id = i.industry_id
 
