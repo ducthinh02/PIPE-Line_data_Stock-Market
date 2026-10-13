@@ -1,6 +1,6 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
-from airflow.operators.bash import BashOperator
+from airflow.providers.standard.operators.bash import BashOperator
 
 import sys
 sys.path.append(

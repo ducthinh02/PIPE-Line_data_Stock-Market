@@ -40,7 +40,7 @@ with DAG(
     dag_id='ETL_to_Database',
     default_args=default_args,
     description='ETL DAG',
-    schedule='1 0 * * 0',
+    schedule='1 0 * * 1-6',
     start_date=datetime(2026,10,9),
     catchup=False,
 ) as dag:
