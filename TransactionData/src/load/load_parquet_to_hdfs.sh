@@ -44,7 +44,7 @@ fi
 
 # load ohlcv
 local_directory=/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_ohlcv_company_to_dl
-hdfs_directory=/user/ubuntu/datalake/ohlcv_companies
+hdfs_directory=/user/ubuntu/datalake/ohlcv/ohlcv_companies
 
 # Find the latest Parquet file
 latest_file=$(ls -t "$local_directory"/*.parquet | head -1)
