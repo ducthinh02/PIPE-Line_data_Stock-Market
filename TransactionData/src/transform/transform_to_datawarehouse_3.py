@@ -94,7 +94,7 @@ def process_retail(parquet_file_path):
     
     df_dim_retail = df_spark.select(col("ticker").alias("ticker")).distinct()
     
-    arrow_table_dim_retail = pa.Table.from_Pandas( df_dim_retail.toPandas())
+    arrow_table_dim_retail = pa.Table.from_pandas(df_dim_retail.toPandas())
     
     conn.register("arrow_table_dim_retail", arrow_table_dim_retail)
     
