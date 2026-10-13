@@ -16,7 +16,7 @@ if [ -z "$latest_file" ]; then
     echo "No Parquet file found in the directory $local_directory."
 else
     # Upload the file to HDFS
-    hdfs dfs -put "$latest_file" "$hdfs_directory"
+    hdfs dfs -put -f "$latest_file" "$hdfs_directory"
 
     # Append the file name and HDFS directory to the variable
     latest_files="$latest_files$hdfs_directory/$(basename $latest_file)\n"
@@ -35,7 +35,7 @@ if [ -z "$latest_file" ]; then
     echo "No Parquet file found in the directory $local_directory."
 else
     # Upload the file to HDFS
-    hdfs dfs -put "$latest_file" "$hdfs_directory"
+    hdfs dfs -put -f "$latest_file" "$hdfs_directory"
 
     # Append the file name and HDFS directory to the variable
     latest_files="$latest_files$hdfs_directory/$(basename $latest_file)\n"
@@ -54,7 +54,7 @@ if [ -z "$latest_file" ]; then
     echo "No Parquet file found in the directory $local_directory."
 else
     # Upload the file to HDFS
-    hdfs dfs -put "$latest_file" "$hdfs_directory"
+    hdfs dfs -put -f "$latest_file" "$hdfs_directory"
 
     # Append the file name and HDFS directory to the variable
     latest_files="$latest_files$hdfs_directory/$(basename $latest_file)\n"
@@ -73,7 +73,7 @@ if [ -z "$latest_file" ]; then
     echo "No Parquet file found in the directory $local_directory."
 else
     # Upload the file to HDFS
-    hdfs dfs -put "$latest_file" "$hdfs_directory"
+    hdfs dfs -put -f "$latest_file" "$hdfs_directory"
 
     # Append the file name and HDFS directory to the variable
     latest_files="$latest_files$hdfs_directory/$(basename $latest_file)\n"
@@ -91,7 +91,7 @@ if [ -z "$latest_file" ]; then
     echo "No Parquet file found in the directory $local_directory."
 else
     # Upload the file to HDFS
-    hdfs dfs -put "$latest_file" "$hdfs_directory"
+    hdfs dfs -put -f "$latest_file" "$hdfs_directory"
 
     # Append the file name and HDFS directory to the variable
     latest_files="$latest_files$hdfs_directory/$(basename $latest_file)\n"
@@ -110,7 +110,7 @@ if [ -z "$latest_file" ]; then
     echo "No Parquet file found in the directory $local_directory."
 else
     # Upload the file to HDFS
-    hdfs dfs -put "$latest_file" "$hdfs_directory"
+    hdfs dfs -put -f "$latest_file" "$hdfs_directory"
 
     # Append the file name and HDFS directory to the variable
     latest_files="$latest_files$hdfs_directory/$(basename $latest_file)\n"
@@ -128,7 +128,7 @@ if [ -z "$latest_file" ]; then
     echo "No Parquet file found in the directory $local_directory."
 else
     # Upload the file to HDFS
-    hdfs dfs -put "$latest_file" "$hdfs_directory"
+    hdfs dfs -put -f "$latest_file" "$hdfs_directory"
 
     # Append the file name and HDFS directory to the variable
     latest_files="$latest_files$hdfs_directory/$(basename $latest_file)\n"
