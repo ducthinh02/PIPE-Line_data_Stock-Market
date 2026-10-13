@@ -123,6 +123,9 @@ def process(parquet_file_path):
     
     if "ohlcv_index" in parquet_file_path:
         
+        df_spark_ohlcv = df_spark_ohlcv.withColumnRenamed("ticker", "index_code") \
+                    .withColumnRenamed("time", "time_stamp") 
+        
         df_index_id = conn.execute(
             '''
             SELECT dim_index_id, index_code
@@ -130,8 +133,14 @@ def process(parquet_file_path):
             '''
         ).fetchdf()
 
+        # tạo pandas dataframe của companies
+        index_df= df_index_id.drop_duplicates(
+            subset=['index_code'],
+            keep="last"
+        )
+
         df_spark_index_id = spark.createDataFrame(
-            df_index_id
+            index_df
         )
         
         df_spark_ohlcv= df_spark_ohlcv.join(
@@ -141,7 +150,7 @@ def process(parquet_file_path):
         )
         
         df_spark_ohlcv = df_spark_ohlcv.filter(
-            df_spark_ohlcv["index_code"].isNotNull()
+            df_spark_ohlcv["dim_index_id"].isNotNull()
         )
         
         candles_index_time_id = df_dim_time_id["time_id"][0]
@@ -170,10 +179,10 @@ def process(parquet_file_path):
                     candles_index_high ,
                     candles_index_low  ,
                     candles_index_timestamp ,
-                    trande_time_id ,
+                    trande_time_id
                 )
                 SELECT 
-                    index_id,
+                    dim_index_id,
                     volume,
                     open, 
                     close, 
@@ -182,8 +191,7 @@ def process(parquet_file_path):
                     time_stamp,
                     trande_time_id
                 FROM arrow_table
-            '''
-            
+            '''    
         )
     elif "ohlcv_companies" in parquet_file_path:
         

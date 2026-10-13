@@ -123,7 +123,6 @@ def process_index(parquet_file_path):
     df_spark = spark.read.parquet(parquet_file_path)
     
     # Hiển thị dữ liệu df spark
-    print("Số dòng Spark đọc được:", df_spark.count())
     df_spark.printSchema()
     df_spark.show(10, truncate=False)
         
@@ -138,20 +137,6 @@ def process_index(parquet_file_path):
     database_path = '/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb'
     
     conn = duckdb.connect(database=database_path)
-    
-    print("Database đang sử dụng:", database_path)
-
-    print(
-        "Số dòng trong Arrow:",
-        arrow_table.num_rows
-    )
-
-    print(
-        "Số dòng hiện có trong dim_index:",
-        conn.execute(
-            "SELECT COUNT(*) FROM dim_index"
-        ).fetchone()[0]
-    )
     
     conn.register("arrow_table",arrow_table)
     
