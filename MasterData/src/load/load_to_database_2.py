@@ -36,7 +36,13 @@ def insert_data_from_json(file_path, table_name, columns, conflict_columns):
     query = f"""INSERT INTO {table_name} ({columns_str})
             VALUES ({placeholder})
             ON CONFLICT ({conflict_columns_str}) 
-            DO NOTHING"""
+            DO UPDATE SET
+                ck_index_update_time_stamp = CURRENT_TIMESTAMP ,
+                index_code = EXCLUDED.index_code,
+                index_name = EXCLUDED.index_name,
+                index_description = EXCLUDED.index_description,
+                index_group_id = EXCLUDED.index_group_id
+            """
     
     conn = psycopg2.connect(
         host=os.getenv("POSTGRES_HOST"),
@@ -69,7 +75,7 @@ def load_json_to_db_2():
             '.json'
         ),
         'CK_INDEX',
-        ['index_code', 'index_name','index_description','group_id'],
+        ['index_code', 'index_name','index_description','index_group_id'],
         ['index_code','index_name']
     )
 
