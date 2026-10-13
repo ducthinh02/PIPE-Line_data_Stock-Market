@@ -71,7 +71,7 @@ def load_json_to_db_3():
         'COMPANIES',
         ['industry_id','exchange_id','ticker_company','founded_date','charter_capital',
         'number_of_employees','company_type','listing_date',
-        'listing_price','listed_volume','outstanding_shares','ceo_name'],
+        'listing_price','listed_volume','outstanding_shares','ceo_name','company_name'],
         ['ticker_company']
     )
 
