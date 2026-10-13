@@ -125,7 +125,7 @@ def process(parquet_file_path):
         
         df_index_id = conn.execute(
             '''
-            SELECT index_id, index_code
+            SELECT dim_index_id, index_code
             FROM dim_index
             '''
         ).fetchdf()
