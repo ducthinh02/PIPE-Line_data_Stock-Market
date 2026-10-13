@@ -73,8 +73,7 @@ def process_company(parquet_file_path):
                 listing_price ,                            
                 listed_volume ,                       
                 outstanding_shares,
-                ceo_name,
-                company_update_time_stamp 
+                ceo_name
             )
             SELECT
             industry_of_company, 
@@ -90,7 +89,6 @@ def process_company(parquet_file_path):
             listed_volume ,                       
             outstanding_shares,
             ceo_name,
-            company_update_time_stamp
             FROM arrow_table
         '''
         
