@@ -250,11 +250,20 @@ def process_rate(parquet_file_path):
 
     df_spark_rate = df_spark_rate.withColumn(
         "buy_cash",
-        regexp_replace(
-            col("buy_cash"),
-            ",",
-            ""
-        ).cast("double")
+        when(
+            col("buy_cash").isNull() | (col("buy_cash") == "-"),
+            None
+            ).otherwise(
+                regexp_replace(
+                    col("buy_cash"),
+                    ",",
+                    ""
+                ).cast("double")
+            )
+        )
+
+    df_spark_rate = df_spark_rate.filter(
+        col("buy_cash").isNotNull()
     )
 
     df_spark_rate = df_spark_rate.withColumn(
