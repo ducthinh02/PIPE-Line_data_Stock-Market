@@ -306,8 +306,7 @@ def process_rate(parquet_file_path):
     # =========================
 
     database_path = (
-        "D:/ETL-pipeline data analytics securities/"
-        "datawarehouse.duckdb"
+        "/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb"
     )
 
     conn = duckdb.connect(
