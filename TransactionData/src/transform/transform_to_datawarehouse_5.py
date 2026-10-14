@@ -9,7 +9,8 @@ import json
 from datetime import datetime
 import re
 import pandas as pd 
-
+from pyspark.sql import functions as F
+from pyspark.sql.window import Window
 from transformers import pipeline
 
 def get_late_parquet_file(hdfs_directory):
@@ -40,6 +41,7 @@ def get_late_parquet_file(hdfs_directory):
 # NER MODEL
 # ============================================================
 
+BATCH_SIZE = 10
 
 LABEL_MAP = {
     "LABEL_0": "negative",
@@ -134,13 +136,10 @@ def analyze_company_sentiment(context, classifier):
 
     results = classifier(
         context,
-        top_k=None
+        top_k=1
     )
 
-    best_result = max(
-        results,
-        key=lambda x: x["score"]
-    )
+    best_result = results[0]
 
     return {
         "sentiment_label": LABEL_MAP[
@@ -222,361 +221,289 @@ def process_fact_company_news (parquet_file_path, ner, classifier):
     # --------------------------------------------------------
     # Read JSON
     # --------------------------------------------------------
-    
-    spark = SparkSession.builder\
-        .appName("News NER Analysis")\
-            .config("spark.sql.caseSensitive", "true")\
-            .getOrCreate()
-    
-    dfspark_news = spark.read.parquet(parquet_file_path)
-    
-    if dfspark_news.isEmpty():
-        raise ValueError("ERROR!")
+        
+    spark = (
+        SparkSession.builder
+        .appName("News NER Analysis")
+        .config("spark.sql.caseSensitive", "true")
+        .getOrCreate()
+    )
 
-    dfspark_news.printSchema()
-    dfspark_news.show()
-    
-    dfspark_news = dfspark_news.select(
+    duckdb_path = (
+        "/home/ubuntu/PIPE-Line_data_Stock-Market/"
+        "datawarehouse.duckdb"
+    )
+
+    conn = None
+
+    try:
+        # 1. Đọc dữ liệu tin tức từ Parquet
+        df_news = spark.read.parquet(parquet_file_path)
+
+        df_news = df_news.select(
             col("article_id"),
             col("title"),
             col("full_content")
+        ).filter(
+            col("full_content").isNotNull()
+            & (trim(col("full_content")) != "")
         )
-    
-    dfspark_news = dfspark_news.filter(
-    col("full_content").isNotNull() &
-    (col("full_content") != "")
-    )   
-    
-    print(f"Articles available for sentiment: "
-        f"{dfspark_news.count()}")
-    
-    
-    # chuyển dataframe spark thành python list
-    rows = dfspark_news.collect()
-    
-    company_data = []
-    total = len(rows)
-    
-    for index, row in enumerate(rows, start=1):
-        
-        article_id = row["article_id"]
-        title = row["title"]
-        full_content = row["full_content"]
-        
-        print(
-            f"Processing {index}/{total}:{title}"
+
+        total = df_news.count()
+        print(f"Articles available for sentiment: {total}")
+
+        if total == 0:
+            print("Không có bài báo để xử lý.")
+            return
+
+        # 2. Lấy thông tin công ty từ DuckDB
+        conn = duckdb.connect(database=duckdb_path)
+
+        company_pd = conn.execute("""
+            SELECT company_id, ticker_company, company_name
+            FROM dim_company
+            WHERE company_name IS NOT NULL
+        """).fetchdf()
+
+        if company_pd.empty:
+            raise ValueError("dim_company không có dữ liệu công ty.")
+
+        # Chuẩn hóa tên công ty
+        company_pd["company_name_normalized"] = (
+            company_pd["company_name"]
+            .str.strip()
+            .str.lower()
         )
-        
-        if full_content.strip() in  [
-            "ONLY AVAILABLE IN PAID PLANS",
-            "ONLY AVAILABLE IN PAID PLAN"
-        ]:
-            print( "Skip: NewsData placeholder")
-            
-            continue
-            
-        # phân tích sentiment
-        
-        ner_result = ner(full_content)
-        
-        if ner_result is None:
+
+        # 3. Xử lý tin tức theo từng nhóm 10 bài
+        news_iterator = df_news.toLocalIterator()
+
+        batch_number = 0
+        processed = 0
+
+        while True:
+            # Chỉ lấy tối đa 10 bài cho nhóm hiện tại
+            batch = list(itertools.islice(news_iterator, BATCH_SIZE))
+
+            if not batch:
+                break
+
+            batch_number += 1
             print(
-                " Skip: sentiment analysis failed"
+                f"\nBatch {batch_number}: "
+                f"{len(batch)} bài báo"
             )
-            continue
-        
-        # ============================================================
-        # Lấy ORGANIZATION
-        # ============================================================ 
-        
-        organizations = []
-        for entity in ner_result:
-            if entity["entity_group"] == "ORGANIZATION":
-                
-                organizations.append(
-                    {
-                        "article_id": article_id,
-                        "organization": entity["word"],
-                        "ner_score": float(entity["score"])
-                    }
+
+            company_data = []
+
+            # 4. NER cho từng bài trong nhóm
+            for row in batch:
+                article_id = row["article_id"]
+                full_content = row["full_content"]
+
+                print(f"NER: {article_id}")
+
+                if full_content.strip() in [
+                    "ONLY AVAILABLE IN PAID PLANS",
+                    "ONLY AVAILABLE IN PAID PLAN"
+                ]:
+                    continue
+
+                ner_result = ner(full_content)
+
+                if not ner_result:
+                    continue
+
+                for entity in ner_result:
+                    if entity.get("entity_group") != "ORGANIZATION":
+                        continue
+
+                    organization = entity.get("word", "").strip()
+
+                    if organization:
+                        company_data.append({
+                            "article_id": article_id,
+                            "organization": organization,
+                            "ner_score": float(entity["score"])
+                        })
+
+            # Không phát hiện tổ chức trong nhóm này
+            if not company_data:
+                processed += len(batch)
+                continue
+
+            # 5. Chuyển kết quả NER thành Spark DataFrame
+            df_ner = spark.createDataFrame(company_data)
+
+            df_ner = df_ner.withColumn(
+                "organization_normalized",
+                lower(trim(col("organization")))
+            )
+
+            # 6. Đối chiếu tổ chức với danh sách công ty
+            df_company = spark.createDataFrame(company_pd)
+
+            df_matched = (
+                df_ner.join(
+                    df_company,
+                    df_ner.organization_normalized
+                    == df_company.company_name_normalized,
+                    "inner"
                 )
-            
-        if not organizations:
-            print("Không tìm thấy company")
-        
-        company_data.extend(organizations)
-    
-    
-    df_company_news = spark.createDataFrame(company_data)
-    
-    df_company_news.show(
-        truncate=False
-    )
-
-    df_company_news = df_company_news.withColumn(
-        "organization_normalized",
-        lower(
-            trim(
-                col("organization")
-            )
-        )
-    )
-    
-    duckdb_path = "/home/ubuntu/PIPE-Line_data_Stock-Market/datawarehouse.duckdb"
-    conn = duckdb.connect(duckdb_path)
-
-    id_company_pd = conn.execute(
-        """  SELECT
-                company_id,
-                ticker_company,
-                company_name
-                FROM dim_company """
-        ).fetchdf()
-
-    id_company_df = spark.createDataFrame(id_company_pd)
-    id_company_df = id_company_df.withColumn(
-            "company_name_normalized",
-            lower(
-                trim(
-                    col("company_name")
+                .select(
+                    df_ner.article_id,
+                    df_ner.organization,
+                    df_company.company_id,
+                    df_company.ticker_company,
+                    df_company.company_name
                 )
             )
-        )
-    
-    df_compamy_news_secord = df_company_news.join(
-        id_company_df,
-        on= df_company_news.organization_normalized == id_company_df.company_name_normalized,
-        how= "left"
-        ).select(
-            df_company_news["article_id"],
-            df_company_news["organization"],
-            id_company_df["company_id"],
-            id_company_df["ticker_company"],
-            id_company_df["company_name"]
-    )
-    df_company_news_third = dfspark_news.join(
-        df_compamy_news_secord,
-        on= "article_id",
-        how= "left"
-    ).select(
-        dfspark_news["article_id"],
-        df_compamy_news_secord["organization"],
-        dfspark_news["full_content"],
-        df_compamy_news_secord["company_id"],
-        df_compamy_news_secord["ticker_company"],
-        df_compamy_news_secord["company_name"],
-        )
-    
-    df_company_news_third.show(
-    truncate=False
-    )
-    
-    df_company_news_third.printSchema()
-    
-    df_company_news_third.filter(
-        col("company_id").isNull()
-    ).show(
-        truncate= False
-    )
-    
-    rows_company_news = df_company_news_third.collect()
-    
-    sentiment_data = []    
-    
-    for row in rows_company_news:
 
-        article_id = row[
-            "article_id"
-        ]
+            # Bỏ các kết quả không ghép được với công ty
+            matched_rows = df_matched.toLocalIterator()
 
-        organization = row[
-            "organization"
-        ]
-
-        company_id = row[
-            "company_id"
-        ]
-
-        ticker_company = row[
-            "ticker_company"
-        ]
-
-        company_name = row[
-            "company_name"
-        ]
-
-        full_content = row[
-            "full_content"
-        ]
-
-        # ----------------------------------------------------
-        # Tạo alias của company
-        # ----------------------------------------------------
-
-        aliases = generate_company_aliases(
-            company_name
-        )
-
-        # ----------------------------------------------------
-        # Lấy context
-        # ----------------------------------------------------
-
-        context = get_company_context(
-            full_content,
-            aliases
-        )
-
-        if not context:
-
-            print(
-                f"Không tìm thấy context: "
-                f"{organization} / "
-                f"{ticker_company}"
-            )
-
-            continue
-
-        # ----------------------------------------------------
-        # PhoBERT
-        # ----------------------------------------------------
-
-        sentiment_result = analyze_company_sentiment(
-                context,
-                classifier
-            )
-        
-
-        if sentiment_result is None:
-
-            continue
-
-        # ----------------------------------------------------
-        # Fact record
-        # ----------------------------------------------------
-
-        sentiment_data.append(
-            {
-                "article_id": article_id,
-
-                "company_id": company_id,
-
-                "ticker_company":
-                    ticker_company,
-
-                "company_name":
-                    company_name,
-
-                "sentiment_label":
-                    sentiment_result[
-                        "sentiment_label"
-                    ],
-
-                "sentiment_score":
-                    sentiment_result[
-                        "sentiment_score"
-                    ]
+            # Lấy nội dung bài báo trong nhóm hiện tại
+            content_by_article = {
+                row["article_id"]: row["full_content"]
+                for row in batch
             }
-        )
 
-    # ========================================================
-    # CREATE FINAL SPARK DATAFRAME
-    # ========================================================
+            sentiment_data = []
 
-    if not sentiment_data:
+            # 7. Phân tích sentiment cho từng công ty đã ghép
+            for matched in matched_rows:
+                article_id = matched["article_id"]
+                company_name = matched["company_name"]
+                company_id = matched["company_id"]
+                ticker_company = matched["ticker_company"]
+                organization = matched["organization"]
 
-        raise ValueError(
-            "Không tạo được fact company news!"
-        )
+                full_content = content_by_article.get(article_id)
 
-    df_fact_company_news = (
-        spark.createDataFrame(
-            sentiment_data
-        )
-    )
+                aliases = generate_company_aliases(company_name)
 
-    # ========================================================
-    # RESULT
-    # ========================================================
+                context = get_company_context(
+                    full_content,
+                    aliases
+                )
 
-    print(
-        "Final fact_company_news:"
-    )
+                if not context:
+                    print(
+                        f"Không tìm thấy context: "
+                        f"{organization} / {ticker_company}"
+                    )
+                    continue
 
-    df_fact_company_news.show(
-        truncate=False
-    )
+                sentiment_result = analyze_company_sentiment(
+                    context,
+                    classifier
+                )
 
-    df_fact_company_news.printSchema()
-    
-    df_fact_company_news = df_fact_company_news.select(
-        col("article_id"),
-        col("company_id"),
-        col("sentiment_label"),
-        col("sentiment_score")
-    )
-    df_fact_company_news_final = df_fact_company_news.toPandas()
-    
-    # join news_id từ dim_news vào fact_company_news
-    
-    id_time_news_df = conn.execute(
-    """
-        SELECT news_id,
-                news_article_id AS article_id 
-        FROM dim_news
-    """
-    ).fetchdf()
-    
-    arrow_table_fact_company_news = df_fact_company_news_final.merge(
-        id_time_news_df,
-        on = "article_id",
-        how = 'left') 
-    
-    arrow_table_fact_company_news = arrow_table_fact_company_news[
-        [
-            "news_id",
-            "company_id",
-            "sentiment_label",
-            "sentiment_score"
-        ]
-    ]
-    
-    arrow_table_fact_company_news = arrow_table_fact_company_news[
-        arrow_table_fact_company_news["news_id"].notnull() &
-        arrow_table_fact_company_news["company_id"].notnull()
-    ]
-    
-    arrow_table_fact_news_company= pa.Table.from_pandas(
-        arrow_table_fact_company_news
-    )
+                if sentiment_result is None:
+                    continue
 
-    conn.register("arrow_table_fact_news_company",
-                arrow_table_fact_news_company)
-    
-    conn.execute(
-    """
-        INSERT INTO fact_news_companies (
-            news_company_company_id,
-            news_company_news_id,
-            news_company_ticker_sentiment_score,
-            news_company_ticker_sentiment_label
-        )
-        SELECT 
-            company_id,
-            news_id,
-            sentiment_score,
-            sentiment_label
-        FROM arrow_table_fact_news_company
-        WHERE NOT EXISTS (
-            SELECT 1
-            FROM fact_news_companies f
-            WHERE f.news_company_news_id = news_id
-            AND f.news_company_company_id = company_id
-            )
-    """
-    )
-    conn.close()
-    
-    spark.stop()
+                sentiment_data.append({
+                    "article_id": article_id,
+                    "company_id": company_id,
+                    "ticker_company": ticker_company,
+                    "company_name": company_name,
+                    "sentiment_label":
+                        sentiment_result["sentiment_label"],
+                    "sentiment_score":
+                        sentiment_result["sentiment_score"]
+                })
+
+            # 8. Ghi kết quả của nhóm hiện tại vào DuckDB
+            if sentiment_data:
+                df_sentiment = spark.createDataFrame(sentiment_data)
+
+                df_sentiment = df_sentiment.select(
+                    col("article_id"),
+                    col("company_id"),
+                    col("sentiment_label"),
+                    col("sentiment_score")
+                )
+
+                sentiment_pd = df_sentiment.toPandas()
+
+                news_ids = conn.execute("""
+                    SELECT
+                        news_id,
+                        news_article_id AS article_id
+                    FROM dim_news
+                """).fetchdf()
+
+                fact_pd = sentiment_pd.merge(
+                    news_ids,
+                    on="article_id",
+                    how="left"
+                )
+
+                fact_pd = fact_pd[
+                    fact_pd["news_id"].notnull()
+                    & fact_pd["company_id"].notnull()
+                ]
+
+                if not fact_pd.empty:
+                    fact_pd = fact_pd[
+                        [
+                            "company_id",
+                            "news_id",
+                            "sentiment_score",
+                            "sentiment_label"
+                        ]
+                    ]
+
+                    arrow_table = pa.Table.from_pandas(
+                        fact_pd,
+                        preserve_index=False
+                    )
+
+                    conn.register(
+                        "batch_fact_news",
+                        arrow_table
+                    )
+
+                    conn.execute("""
+                        INSERT INTO fact_news_companies (
+                            news_company_company_id,
+                            news_company_news_id,
+                            news_company_ticker_sentiment_score,
+                            news_company_ticker_sentiment_label
+                        )
+                        SELECT
+                            company_id,
+                            news_id,
+                            sentiment_score,
+                            sentiment_label
+                        FROM batch_fact_news AS b
+                        WHERE NOT EXISTS (
+                            SELECT 1
+                            FROM fact_news_companies AS f
+                            WHERE
+                                f.news_company_news_id = b.news_id
+                                AND f.news_company_company_id = b.company_id
+                        )
+                    """)
+
+                    conn.unregister("batch_fact_news")
+
+                    print(
+                        f"Đã ghi {len(fact_pd)} kết quả "
+                        f"từ batch {batch_number}"
+                    )
+
+            processed += len(batch)
+            print(f"Đã xử lý {processed}/{total} bài báo")
+
+        print("Hoàn thành process_fact_company_news.")
+
+    finally:
+        if conn is not None:
+            conn.close()
+
+        spark.stop()
+
     
 def transform_to_datawarehouse_5():
     
@@ -591,7 +518,7 @@ def transform_to_datawarehouse_5():
         model="FiinGroup/phobert-finetuned",
         tokenizer="FiinGroup/phobert-finetuned"
     )
-    news_hdfs_path = '/user/ubuntu/datalake/news'
+    news_hdfs_path = '/user/ubuntu/datalake/news/process'
     
     latest_file = get_late_parquet_file(hdfs_directory=news_hdfs_path)
     
