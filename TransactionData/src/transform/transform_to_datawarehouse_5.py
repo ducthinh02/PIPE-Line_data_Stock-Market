@@ -12,6 +12,7 @@ import pandas as pd
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
 from transformers import pipeline
+import itertools
 
 def get_late_parquet_file(hdfs_directory):
     if not hdfs_directory.startswith("hdfs://"):
@@ -261,7 +262,7 @@ def process_fact_company_news (parquet_file_path, ner, classifier):
 
         company_pd = conn.execute("""
             SELECT company_id, ticker_company, company_name
-            FROM dim_company
+            FROM dim_companies
             WHERE company_name IS NOT NULL
         """).fetchdf()
 
