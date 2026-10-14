@@ -518,7 +518,7 @@ def transform_to_datawarehouse_5():
         model="FiinGroup/phobert-finetuned",
         tokenizer="FiinGroup/phobert-finetuned"
     )
-    news_hdfs_path = '/user/ubuntu/datalake/news/process'
+    news_hdfs_path = '/user/ubuntu/datalake/news'
     
     latest_file = get_late_parquet_file(hdfs_directory=news_hdfs_path)
     
