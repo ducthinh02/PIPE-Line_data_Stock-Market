@@ -224,7 +224,7 @@ def load_api_to_parquet():
 
     # Convert News JSON files to Parquet
     # Path to the directory containing the JSON files
-    input_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/news'
+    input_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/news/process'
     # Path to the directory to save the Parquet files
     output_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_news_to_dl'
     load_db_to_dl(input_directory, output_directory)
@@ -247,7 +247,7 @@ def load_api_to_parquet():
     
 
     # chuyển json index ohlcv sang parquet
-    input_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/index_ohlcv'
+    input_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/raw/ohlcv_index'
     # Path to the directory to save the Parquet files
     output_directory = r'/home/ubuntu/PIPE-Line_data_Stock-Market/TransactionData/data/completed/load_api_index_ohlcv_to_dl'
     load_db_ohlcv_to_dl(input_directory, output_directory)
@@ -296,4 +296,4 @@ def load_api_to_parquet():
     # Path(output_directory).mkdir(parents=True, exist_ok=True)
     # load_db_ohlcv_to_dl(input_directory, output_directory)
     
-load_api_to_parquet()
+# load_api_to_parquet()
