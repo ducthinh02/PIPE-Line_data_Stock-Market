@@ -328,7 +328,7 @@ def process_news_dim_news (parquet_file_path, classifier):
     )
     df_dim_news_final.show()
     
-    arrow_table_dim_news = pa.Table.from_Pandas( df_dim_news_final.toPandas())
+    arrow_table_dim_news = pa.Table.from_pandas( df_dim_news_final.toPandas())
         
     conn.register("arrow_table_dim_news", arrow_table_dim_news)
         
