@@ -134,6 +134,20 @@ def analyze_company_sentiment(context, classifier):
 
     if not context:
         return None
+    tokenizer = classifier.tokenizer
+
+    inputs = tokenizer(
+        context,
+        truncation=True,
+        max_length=256,
+        return_tensors="pt"
+    )
+
+    # Chuyển tensor thành chuỗi token đã được giới hạn độ dài
+    truncated_context = tokenizer.decode(
+        inputs["input_ids"][0],
+        skip_special_tokens=True
+    )
 
     results = classifier(
         context,
