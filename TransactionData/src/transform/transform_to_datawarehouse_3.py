@@ -1,7 +1,7 @@
 import sys
 import duckdb
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import input_file_name, lit, col, regexp_replace, to_date
+from pyspark.sql.functions import input_file_name, lit, col, regexp_replace, to_date, when
 from datetime import datetime, timedelta
 import pyarrow as pa
 import pyarrow.parquet as pq
@@ -259,11 +259,16 @@ def process_rate(parquet_file_path):
 
     df_spark_rate = df_spark_rate.withColumn(
         "buy_transfer",
-        regexp_replace(
-            col("buy_transfer"),
-            ",",
-            ""
-        ).cast("double")
+            when(
+                col("buy_transfer").isNull() | (col("buy_transfer") == "-"),
+                None
+            ).otherwise(
+                col("buy_transfer").cast("double")
+            )
+    )
+    
+    df_spark_rate = df_spark_rate.filter(
+        col("buy_transfer").isNotNull()
     )
 
     df_spark_rate = df_spark_rate.withColumn(
