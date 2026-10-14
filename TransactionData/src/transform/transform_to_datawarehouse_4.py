@@ -1,6 +1,6 @@
 import duckdb
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import input_file_name, lit, col, regexp_replace, to_date
+from pyspark.sql.functions import input_file_name, lit, col, regexp_replace, to_date, explode
 from datetime import datetime, timedelta
 import pyarrow as pa
 import pyarrow.parquet as pq
@@ -188,11 +188,15 @@ def process_news_dim_news (parquet_file_path, classifier):
     dfspark_news.printSchema()
     dfspark_news.show()
 
+    dfspark_news = dfspark_news.withColumn(
+        "article",
+        explode(col("results"))
+    )
 
     df_news_sentiment = dfspark_news.select(
-            col("article_id"),
-            col("title"),
-            col("full_content")
+            col("article.article_id").alias("article_id"),
+            col("article.title").alias("title"),
+            col("article.full_content").alias("full_content")
         )
     
     df_news_sentiment = df_news_sentiment.filter(
