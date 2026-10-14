@@ -263,7 +263,11 @@ def process_rate(parquet_file_path):
                 col("buy_transfer").isNull() | (col("buy_transfer") == "-"),
                 None
             ).otherwise(
-                col("buy_transfer").cast("double")
+                regexp_replace(
+                    col("buy_transfer"),
+                    ",",
+                    ""
+                ).cast("double")
             )
     )
     
