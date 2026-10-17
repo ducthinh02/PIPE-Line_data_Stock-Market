@@ -39,6 +39,7 @@ default_args = {
 
 with DAG(
     dag_id='ELT_to_Data_Warehouse',
+    max_active_runs=1,
     default_args=default_args,
     description='ETL DAG for Data Warehouse',
     schedule='1 1 * * 1-6',  # Chạy khi được kích hoạt bởi DAG khác
